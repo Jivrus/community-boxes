@@ -1,0 +1,42 @@
+steps:
+  - name: curlimages/curl
+    args:
+      - '-H'
+      - 'Content-Type: application/json'
+      - '-d'
+      - '{"text": "JCP BOX Stage Deployment Started"}'
+      - '-X'
+      - POST
+      - >-
+        https://chat.googleapis.com/v1/spaces/AAAAwK5fc9Q/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=0nzcIOfwJjaNB4Sn9xadvoyprtxYmEjCPX9JWn9UH4U%3D
+    dir: /workspace/box
+  - name: 'gcr.io/cloud-builders/mvn'
+    args:
+      - package
+    dir: /workspace/box-java
+  - name: gcr.io/cloud-builders/gcloud
+    args:
+      - functions
+      - deploy
+      - box-java-server
+      - '--entry-point'
+      - com.jivrus.jcp.boxjava.gcf.CloudFunction
+      - '--runtime'
+      - java17
+      - '--trigger-http'
+      - '--allow-unauthenticated'
+      - '--project'
+      - jcp-box-stage
+    dir: /workspace/box-java
+  - name: curlimages/curl
+    args:
+      - '-H'
+      - 'Content-Type: application/json'
+      - '-d'
+      - '{"text": "JCP BOX Stage Deployment Completed"}'
+      - '-X'
+      - POST
+      - >-
+        https://chat.googleapis.com/v1/spaces/AAAAwK5fc9Q/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=0nzcIOfwJjaNB4Sn9xadvoyprtxYmEjCPX9JWn9UH4U%3D
+  - name: 'gcr.io/cloud-builders/npm:node-14.10.1'
+    timeout: 1600s

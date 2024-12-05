@@ -1,0 +1,40 @@
+steps:
+  - name: curlimages/curl
+    args:
+      - '-H'
+      - 'Content-Type: application/json'
+      - '-d'
+      - '{"text": "JCP BOX-JAVA Dev-CI Deployment Started"}'
+      - '-X'
+      - POST
+      - >-
+        https://chat.googleapis.com/v1/spaces/AAAAwK5fc9Q/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=tkH2hiCUVv-a_uueBh9i8uskKAsD0s0cbNfjWqC3SQg%3D
+  - name: 'gcr.io/cloud-builders/mvn'
+    args:
+      - package
+    dir: /workspace/box-java
+  - name: gcr.io/cloud-builders/gcloud
+    args:
+      - functions
+      - deploy
+      - box-java-server
+      - '--entry-point'
+      - com.jivrus.jcp.boxjava.gcf.CloudFunction
+      - '--runtime'
+      - java17
+      - '--trigger-http'
+      - '--allow-unauthenticated'
+      - '--project'
+      - appiworks-dev-ci
+    dir: /workspace/box-java
+  - name: curlimages/curl
+    args:
+      - '-H'
+      - 'Content-Type: application/json'
+      - '-d'
+      - '{"text": "JCP BOX-JAVA Dev-CI Deployment Completed"}'
+      - '-X'
+      - POST
+      - >-
+        https://chat.googleapis.com/v1/spaces/AAAAwK5fc9Q/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=tkH2hiCUVv-a_uueBh9i8uskKAsD0s0cbNfjWqC3SQg%3D
+    timeout: 1600s

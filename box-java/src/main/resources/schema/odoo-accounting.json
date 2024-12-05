@@ -1,0 +1,80 @@
+{
+  "__id": "odoo-accounting",
+  "name": "Odoo Accounting",
+  "status": "alpha",
+  "type": "odoo",
+  "supports": [
+    "object"
+  ],
+  "logo": "https://storage.googleapis.com/jivrus-web-images/jcp/box/odoo/icon-hi.png",
+  "connectorType": "odoo",
+  "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo Accounting is a full featured accounting app. Accountant productivity is at the core of its development with features such as AI-powered invoice recognition, synchronization with your bank accounts, smart matching suggestions, etc",
+  "authType": "credentials",
+  "organization": "odoo",
+  "categories": [
+    "odoo", "accounting"
+  ],
+  "odoo-model": "account",
+  "code": "accounting",
+  "config": {
+    "list": [
+      "domainURL",
+      "database",
+      "username",
+      "password"
+    ],
+    "domainURL": {
+      "name": "Domain URL",
+      "dataType": "string",
+      "icon": "http",
+      "required": true
+    },
+    "database": {
+      "name": "Database",
+      "dataType": "string",
+      "icon": "storage",
+      "required": true
+    },
+    "username": {
+      "name": "Username",
+      "dataType": "string",
+      "icon": "person",
+      "required": true
+    },
+    "password": {
+      "name": "Password or API Key",
+      "dataType": "password",
+      "icon": "security",
+      "required": true
+    }
+  },
+  "functions": {
+    "list": [
+      "getobjects",
+      "getattributes"
+    ],
+    "getobjects": {
+      "name": "Get Objects",
+      "__id": "getobjects",
+      "functionName": "objects"
+    },
+    "getattributes": {
+      "__id": "getattributes",
+      "name": "Get Attributes",
+      "functionName": "attributes",
+      "input": {
+        "list": [
+          "object"
+        ],
+        "object": {
+          "name": "object",
+          "dataType": "string",
+          "required": true
+        }
+      }
+    }
+  },
+  "objects": {
+    "list": []
+  }
+}
