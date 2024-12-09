@@ -75,51 +75,5 @@ public class CloudFunction implements HttpFunction {
 				}
 			}
 		}
-		
-		
-		
-/*
-		
-
-		Gson gson = new Gson();
-
-		switch (method) {
-		case "GET":
-			// Get all users
-			String json = gson.toJson(users);
-			System.out.println("JSON: " + json);
-			writer.write(json);
-			response.setStatusCode(HttpURLConnection.HTTP_OK);
-			break;
-		case "POST":
-			// Create user
-			
-			Map<String, Object> newUser = gson.fromJson(request.getReader(), Map.class);
-			users.add(newUser);
-			response.setStatusCode(HttpURLConnection.HTTP_CREATED);
-			break;
-		case "PUT":
-			// Update user
-			if (!"application/json".equals(contentType)) {
-				writer.write("Invalid or missing Content-Type header");
-				response.setStatusCode(HttpURLConnection.HTTP_UNSUPPORTED_TYPE);
-				break;
-			}
-			String userToUpdate = path.replace("/", "");
-			writer.write("Unable to update non-existend user - " + userToUpdate);
-			response.setStatusCode(HttpURLConnection.HTTP_NOT_FOUND);
-			break;
-		case "DELETE":
-			String userToRemove = path.replace("/", "");
-
-			writer.write("Unable to delete non-existend user " + userToRemove);
-			response.setStatusCode(HttpURLConnection.HTTP_NOT_FOUND);
-			break;
-		default:
-			response.setStatusCode(HttpURLConnection.HTTP_BAD_METHOD);
-			writer.write("Http method not supported");
-			break;
-		}
-		*/
 	}
 }

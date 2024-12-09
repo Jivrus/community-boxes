@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.jivrus.jcp.boxjava.common.Descriptive;
-import com.jivrus.jcp.boxjava.common.Descriptor;
 import com.jivrus.jcp.boxjava.common.query.Attribute;
 import com.jivrus.jcp.boxjava.common.query.Result;
 
@@ -34,8 +33,6 @@ public interface Connector extends Descriptive {
     List<Attribute> createAttribute(String name, List<Map<String, Object>> attributes) throws Exception;
 
     Descriptive updateAttribute(String name, Map<String, Object> attributes) throws Exception;
-
-    DatabaseObject createBoxObject(String name, Map<String, Object> parameters) throws Exception;
 
     List<Descriptive>  getFunctions();
 

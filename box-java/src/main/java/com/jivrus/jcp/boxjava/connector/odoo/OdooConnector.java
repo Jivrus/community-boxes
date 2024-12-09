@@ -22,8 +22,6 @@ import com.jivrus.jcp.boxjava.common.query.Result;
 import com.jivrus.jcp.boxjava.connector.CObject;
 import com.jivrus.jcp.boxjava.connector.Connection;
 import com.jivrus.jcp.boxjava.connector.Connector;
-import com.jivrus.jcp.boxjava.connector.DatabaseObject;
-
 
 /**
  * IN Odoo
@@ -298,12 +296,6 @@ public class OdooConnector extends Descriptor implements Connector {
 	}
 
 	@Override
-	public DatabaseObject createBoxObject(String name, Map<String, Object> parameters) throws Exception {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'createBoxObject'");
-	}
-
-	@Override
 	public List<Attribute> getPrimaryKeys(String object) throws Exception {
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'getPrimaryKeys'");
@@ -332,11 +324,4 @@ public class OdooConnector extends Descriptor implements Connector {
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'createAttribute'");
 	}
-
-	@Override
-	public String getMappedDataType(String databaseDataType) throws Exception {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getMappedDataType'");
-	}
-
 }
