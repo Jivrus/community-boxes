@@ -14,6 +14,7 @@ This repository houses all box development from the open developer community
   4. Navigate to box-java (community-boxes>>box-java)
   5. Run the command mvn function:run, this will help you run your changes in the localhost:8080
   ![Local Running]({B4F92497-1A7F-4369-B66C-5E1289CE312C}.png)
+  6. Create a Pull Request by pointing the https://github.com/Jivrus/community-boxes repo as the receiver
 
 # Unit Testing
   1. After successfully setting up the local server at 8080 port, try calling the api's using postman
@@ -31,7 +32,7 @@ This repository houses all box development from the open developer community
     
     ## Connection Explorer
 
-    Create a box/app connection and then see the objects and theirr functions associated
+    Create a box/app connection and then see the objects and their functions associated
     a. Dev.ci - https://dev.ci.appiworks.com/connectionexplorer
     b. Stage Env - https://stage.cd.appiworks.com/connectionexplorer
 

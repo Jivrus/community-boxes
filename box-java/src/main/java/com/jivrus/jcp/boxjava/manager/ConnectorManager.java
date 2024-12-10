@@ -1,8 +1,9 @@
-package com.jivrus.jcp.boxjava.connector;
+package com.jivrus.jcp.boxjava.manager;
 
-import com.jivrus.jcp.boxjava.box.meta.MetaManager;
-import com.jivrus.jcp.boxjava.common.Descriptive;
 import com.jivrus.jcp.boxjava.connector.odoo.OdooConnector;
+import com.jivrus.jcp.boxjava.library.box.meta.MetaManager;
+import com.jivrus.jcp.boxjava.library.common.Descriptive;
+import com.jivrus.jcp.boxjava.library.manager.Connector;
 
 public class ConnectorManager {
 
@@ -11,9 +12,9 @@ public class ConnectorManager {
 		if (desc == null) throw new Exception("Could not find meta data for connector: " + connectorId);
 
 		Connector connector = null;
-
+		System.out.println("TESTING PRODUCT MANAGER");
 		if (connectorId.contains("odoo-")) {
-			connector = new OdooConnector(desc);
+			connector = (Connector) new OdooConnector(desc);
 		}
 		return connector;
 	}

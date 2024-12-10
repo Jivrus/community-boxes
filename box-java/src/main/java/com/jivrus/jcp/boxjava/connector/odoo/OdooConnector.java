@@ -14,14 +14,15 @@ import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 
-import com.jivrus.jcp.boxjava.common.DataType;
-import com.jivrus.jcp.boxjava.common.Descriptive;
-import com.jivrus.jcp.boxjava.common.Descriptor;
-import com.jivrus.jcp.boxjava.common.query.Attribute;
-import com.jivrus.jcp.boxjava.common.query.Result;
-import com.jivrus.jcp.boxjava.connector.CObject;
-import com.jivrus.jcp.boxjava.connector.Connection;
-import com.jivrus.jcp.boxjava.connector.Connector;
+import com.jivrus.jcp.boxjava.library.common.DataType;
+import com.jivrus.jcp.boxjava.library.common.Descriptive;
+import com.jivrus.jcp.boxjava.library.common.Descriptor;
+import com.jivrus.jcp.boxjava.library.common.query.Attribute;
+import com.jivrus.jcp.boxjava.library.common.query.Result;
+import com.jivrus.jcp.boxjava.library.manager.CObject;
+import com.jivrus.jcp.boxjava.library.manager.Connection;
+import com.jivrus.jcp.boxjava.library.manager.Connector;
+
 
 /**
  * IN Odoo
@@ -161,7 +162,7 @@ public class OdooConnector extends Descriptor implements Connector {
 		System.out.println("Available Models (Objects) in Odoo:");
 		for (Object map : modelData) {
 			Map<String, Object> modelMap = (HashMap<String, Object>) map;
-			System.out.println(modelMap);
+			// System.out.println(modelMap);
 			// Extract fields
 			String name = (String) modelMap.get("name");
 			String id = (String) modelMap.get("model");

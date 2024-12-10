@@ -15,18 +15,18 @@ import java.util.stream.Collectors;
 import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 
-import com.jivrus.jcp.boxjava.common.Descriptive;
-import com.jivrus.jcp.boxjava.common.Descriptor;
-import com.jivrus.jcp.boxjava.common.query.Attribute;
-import com.jivrus.jcp.boxjava.common.query.Logical;
-import com.jivrus.jcp.boxjava.common.query.Maker;
-import com.jivrus.jcp.boxjava.common.query.Page;
-import com.jivrus.jcp.boxjava.common.query.Query;
-import com.jivrus.jcp.boxjava.common.query.QueryMaker;
-import com.jivrus.jcp.boxjava.common.query.Result;
-import com.jivrus.jcp.boxjava.connector.CObject;
-import com.jivrus.jcp.boxjava.connector.Connection;
-import com.jivrus.jcp.boxjava.connector.Connector;
+import com.jivrus.jcp.boxjava.library.common.Descriptive;
+import com.jivrus.jcp.boxjava.library.common.Descriptor;
+import com.jivrus.jcp.boxjava.library.common.query.Attribute;
+import com.jivrus.jcp.boxjava.library.common.query.Logical;
+import com.jivrus.jcp.boxjava.library.common.query.Maker;
+import com.jivrus.jcp.boxjava.library.common.query.Page;
+import com.jivrus.jcp.boxjava.library.common.query.Query;
+import com.jivrus.jcp.boxjava.library.common.query.QueryMaker;
+import com.jivrus.jcp.boxjava.library.common.query.Result;
+import com.jivrus.jcp.boxjava.library.manager.CObject;
+import com.jivrus.jcp.boxjava.library.manager.Connection;
+import com.jivrus.jcp.boxjava.library.manager.Connector;
 
 public class OdooObject extends CObject {
 

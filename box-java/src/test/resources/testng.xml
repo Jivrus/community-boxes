@@ -2,8 +2,6 @@
 <suite name="TestSuite">
     <test name="BoxTests">
         <classes>
-            <class name="com.jivrus.jcp.boxjava.MySQLTest"/>
-            <class name="com.jivrus.jcp.boxjava.OracleTest"/>
             <class name="com.jivrus.jcp.boxjava.OdooTest"/>
         </classes>
     </test>

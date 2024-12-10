@@ -20,7 +20,7 @@ import org.json.JSONObject;
 
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
-import com.jivrus.jcp.boxjava.box.BoxGateway;
+import com.jivrus.jcp.boxjava.library.box.BoxGateway;
 
 public class BoxRouteHandler implements RouteHandler {
 
