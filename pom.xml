@@ -9,7 +9,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>box-library</module>
         <module>box-java</module>
     </modules>
 </project>
