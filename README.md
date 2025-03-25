@@ -9,18 +9,18 @@ This repository houses all box development from the open developer community
 # Local Setup
 
   1. Fork the Main Repo from here: https://github.com/Jivrus/community-boxes
-  2. Clone the forked Repo
-  3. The Newly cloned Repo will be your local repo to make all changes
-  4. Now manually copy the com folder from the main repo to the newly cloned repo
-  5. Place the copied folder inside the maven repository in the following path
+  2. Clone the forked Repo to your local machine.
+  3. The Newly cloned Repo will be your local repo to make all changes.
+  4. Now manually copy the "com" folder from the cloned repo
+  5. Place the copied "com" folder inside the maven repository in the following path
      - C:\Users\<user>\.m2\repository - Widows
      - /Users/<user>/.m2/repository - Mac
      See the image "Repo Path.png" for reference
   
+  6. Navigate to box-java (community-boxes >> box-java)
   6. Make changes to the code and test them.
-  7. Run the command mvn function:run, this will help you run your changes in the localhost:8080
-  8. Now you can create a Pull Request from the forked repo to the main repo
-  9. Navigate to box-java (community-boxes>>box-java)
+  8. Run the command mvn function:run, this will help you run your changes in the localhost:8080
+  9. Now you can create a Pull Request from the forked repo to the main repo
   ![Local Running]({B4F92497-1A7F-4369-B66C-5E1289CE312C}.png)
   10. Create a Pull Request by pointing the https://github.com/Jivrus/community-boxes repo as the receiver
 
