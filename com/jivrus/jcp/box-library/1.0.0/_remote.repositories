@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Apr 08 13:40:04 IST 2025
+box-library-1.0.0.pom>=
+box-library-1.0.0.jar>=
+box-library-1.0.0-sources.jar>=

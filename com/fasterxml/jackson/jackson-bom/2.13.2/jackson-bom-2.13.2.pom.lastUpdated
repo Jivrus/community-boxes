@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Mar 25 13:49:46 IST 2025
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1742890786007
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact com.fasterxml.jackson\:jackson-bom\:pom\:2.13.2 from/to central (https\://repo.maven.apache.org/maven2)\: java.nio.file.FileSystemException\: C\:\\Users\\giogo\\.m2\\repository\\com\\fasterxml\\jackson\\jackson-bom\\2.13.2\\jackson-bom-2.13.2.pom.sha1\: The process cannot access the file because it is being used by another process

@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Mar 25 15:09:57 IST 2025
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1742895597248
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact com.google.guava\:listenablefuture\:jar\:9999.0-empty-to-avoid-conflict-with-guava from/to central (https\://repo.maven.apache.org/maven2)\: Connect to repo.maven.apache.org\:443 [repo.maven.apache.org/151.101.156.215, repo.maven.apache.org/2a04\:4e42\:25\:0\:0\:0\:0\:215] failed\: Connect timed out
