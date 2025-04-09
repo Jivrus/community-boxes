@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    <groupId>com.jivrus.jcp</groupId>
+    <artifactId>box-library</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+	<name>Box Java</name>
+	<description>Box using Java Language</description>
+	<properties>
+		<maven.compiler.target>17</maven.compiler.target>
+		<maven.compiler.source>17</maven.compiler.source>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<!--
+          			Google Cloud Functions Framework Maven plugin
+
+		          This plugin allows you to run Cloud Functions Java code
+		          locally. Use the following terminal command to run a
+		          given function locally:
+		
+		          mvn function:run -Drun.functionTarget=your.package.yourFunction
+		        -->
+				<groupId>com.google.cloud.functions</groupId>
+				<artifactId>function-maven-plugin</artifactId>
+				<version>0.11.0</version>
+				<configuration>
+					<functionTarget>com.jivrus.jcp.boxjava.gcf.CloudFunction</functionTarget>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+						<execution>
+								<goals>
+										<goal>jar</goal>
+								</goals>
+								 <configuration>
+                        <classifier>sources</classifier> <!-- Specify a classifier if needed -->
+                    </configuration>
+						</execution>
+				</executions>
+      </plugin>
+
+		</plugins>
+
+
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.datastax.oss</groupId>
+			<artifactId>java-driver-core</artifactId>
+			<version>4.17.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.cloud.functions</groupId>
+			<artifactId>functions-framework-api</artifactId>
+			<version>1.0.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20231013</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-text</artifactId>
+			<version>1.11.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>5.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jsch</artifactId>
+			<version>0.1.54</version> <!-- Or latest version -->
+		</dependency>
+
+   <dependency>
+       <groupId>org.apache.xmlrpc</groupId>
+       <artifactId>xmlrpc-client</artifactId>
+       <version>3.1.3</version>
+   </dependency>
+	</dependencies>
+</project>
