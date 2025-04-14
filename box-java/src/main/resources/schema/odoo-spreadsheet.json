@@ -8,7 +8,7 @@
     ],
     "logo": "https://storage.googleapis.com/jivrus-web-images/jcp/box/odoo/icon-hi.png",
     "connectorType": "odoo",
-    "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo Accounting is a full featured accounting app. Odoo Spreadsheet is a collaborative, real-time spreadsheet tool built into the Odoo ecosystem. It combines the power of traditional spreadsheets with Odoo’s business apps for dynamic data integration. Users can analyze, visualize, and automate data workflows seamlessly. It’s ideal for creating reports, dashboards, and forecasts directly linked to live business data.",
+    "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo Spreadsheet is a collaborative, real-time spreadsheet tool built into the Odoo ecosystem. It combines the power of traditional spreadsheets with Odoo’s business apps for dynamic data integration. Users can analyze, visualize, and automate data workflows seamlessly. It’s ideal for creating reports, dashboards, and forecasts directly linked to live business data.",
     "authType": "credentials",
     "organization": "odoo",
     "categories": [
