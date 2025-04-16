@@ -35,11 +35,11 @@
 
 	</build>
 	<dependencies>
-		<dependency>
+	<dependency>
       <groupId>com.jivrus.jcp</groupId>
 				<artifactId>box-library</artifactId>
 				<version>1.0.0</version>
-    </dependency>
+    </dependency> 
 		<dependency>
 			<groupId>com.datastax.oss</groupId>
 			<artifactId>java-driver-core</artifactId>
