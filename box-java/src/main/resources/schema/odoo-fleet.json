@@ -1,6 +1,6 @@
 {
-    "__id": "odoo-plm",
-    "name": "Odoo plm",
+    "__id": "odoo-fleet",
+    "name": "Odoo Fleet",
     "status": "alpha",
     "type": "odoo",
     "supports": [
@@ -8,14 +8,14 @@
     ],
     "logo": "https://storage.googleapis.com/jivrus-web-images/jcp/box/odoo/icon-hi.png",
     "connectorType": "odoo",
-    "description": "Odoo is a suite of open source business apps that cover all your company needs: The Odoo PLM app streamlines product development with real-time engineering change management. Designers can collaborate using version control and approvals. It enhances productivity and reduces errors across the product lifecycle.",
+    "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo Fleet is a module for managing company vehicles and related services like contracts, fuel, maintenance, and mileage tracking. It helps monitor vehicle status, costs, and schedules for inspections or renewals. Fleet managers can assign vehicles to employees and track usage history. It streamlines vehicle management and reduces administrative overhead.",
     "authType": "credentials",
     "organization": "odoo",
     "categories": [
-      "odoo", "plm"
+      "odoo", "fleet"
     ],
-    "odoo-model": "mrp.eco",
-    "code": "plm",
+    "odoo-model": "fleet.vehicle",
+    "code": "fleet",
     "config": {
       "list": [
         "domainURL",

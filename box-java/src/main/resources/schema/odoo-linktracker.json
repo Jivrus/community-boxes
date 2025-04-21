@@ -1,6 +1,6 @@
 {
-    "__id": "odoo-plm",
-    "name": "Odoo plm",
+    "__id": "odoo-linktracker",
+    "name": "Odoo Link-Tracker",
     "status": "alpha",
     "type": "odoo",
     "supports": [
@@ -8,14 +8,14 @@
     ],
     "logo": "https://storage.googleapis.com/jivrus-web-images/jcp/box/odoo/icon-hi.png",
     "connectorType": "odoo",
-    "description": "Odoo is a suite of open source business apps that cover all your company needs: The Odoo PLM app streamlines product development with real-time engineering change management. Designers can collaborate using version control and approvals. It enhances productivity and reduces errors across the product lifecycle.",
+    "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo Link Tracker is a tool used to track and analyze the performance of URLs shared in marketing campaigns. It records data like the number of clicks, origin of traffic, and conversion rates. Marketers can create custom short links tied to specific campaigns or sources. It’s useful for measuring campaign effectiveness and optimizing marketing strategies.",
     "authType": "credentials",
     "organization": "odoo",
     "categories": [
-      "odoo", "plm"
+      "odoo", "linktracker"
     ],
-    "odoo-model": "mrp.eco",
-    "code": "plm",
+    "odoo-model": "utm.",
+    "code": "linktracker",
     "config": {
       "list": [
         "domainURL",

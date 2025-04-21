@@ -1,6 +1,6 @@
 {
-    "__id": "odoo-plm",
-    "name": "Odoo plm",
+    "__id": "odoo-payroll",
+    "name": "Odoo Payroll",
     "status": "alpha",
     "type": "odoo",
     "supports": [
@@ -8,14 +8,14 @@
     ],
     "logo": "https://storage.googleapis.com/jivrus-web-images/jcp/box/odoo/icon-hi.png",
     "connectorType": "odoo",
-    "description": "Odoo is a suite of open source business apps that cover all your company needs: The Odoo PLM app streamlines product development with real-time engineering change management. Designers can collaborate using version control and approvals. It enhances productivity and reduces errors across the product lifecycle.",
+    "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo Payroll is a module designed to manage employee salaries, deductions, bonuses, and payslips efficiently. It automates payroll calculations based on contracts, attendance, and time off. The system supports custom salary structures, tax rules, and batch processing. It's integrated with HR for a seamless employee management experience.",
     "authType": "credentials",
     "organization": "odoo",
     "categories": [
-      "odoo", "plm"
+      "odoo", "payroll"
     ],
-    "odoo-model": "mrp.eco",
-    "code": "plm",
+    "odoo-model": "hr.work.entry",
+    "code": "payroll",
     "config": {
       "list": [
         "domainURL",

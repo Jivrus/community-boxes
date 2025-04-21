@@ -1,6 +1,6 @@
 {
-    "__id": "odoo-plm",
-    "name": "Odoo plm",
+    "__id": "odoo-appointment",
+    "name": "Odoo Appointment",
     "status": "alpha",
     "type": "odoo",
     "supports": [
@@ -8,14 +8,14 @@
     ],
     "logo": "https://storage.googleapis.com/jivrus-web-images/jcp/box/odoo/icon-hi.png",
     "connectorType": "odoo",
-    "description": "Odoo is a suite of open source business apps that cover all your company needs: The Odoo PLM app streamlines product development with real-time engineering change management. Designers can collaborate using version control and approvals. It enhances productivity and reduces errors across the product lifecycle.",
+    "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo Appointments is a module that allows customers to book meetings or services online based on real-time availability. It helps automate scheduling, reduces manual coordination, and sends reminders to both staff and clients. Appointments can be linked to calendars, integrated with CRM, and customized with time slots, buffer times, and attendee limits. It's ideal for businesses offering consultations, demos, or support sessions.",
     "authType": "credentials",
     "organization": "odoo",
     "categories": [
-      "odoo", "plm"
+      "odoo", "appointment"
     ],
-    "odoo-model": "mrp.eco",
-    "code": "plm",
+    "odoo-model": "appointment.type",
+    "code": "appointment",
     "config": {
       "list": [
         "domainURL",

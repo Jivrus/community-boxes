@@ -1,6 +1,6 @@
 {
-    "__id": "odoo-plm",
-    "name": "Odoo plm",
+    "__id": "odoo-event",
+    "name": "Odoo Event",
     "status": "alpha",
     "type": "odoo",
     "supports": [
@@ -8,14 +8,14 @@
     ],
     "logo": "https://storage.googleapis.com/jivrus-web-images/jcp/box/odoo/icon-hi.png",
     "connectorType": "odoo",
-    "description": "Odoo is a suite of open source business apps that cover all your company needs: The Odoo PLM app streamlines product development with real-time engineering change management. Designers can collaborate using version control and approvals. It enhances productivity and reduces errors across the product lifecycle.",
+    "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo Events is a module for organizing and managing events like conferences, webinars, or workshops. It handles event creation, ticketing, registrations, and attendee communication. Events can be published online with customizable pages and tracked in real time. It’s ideal for both free and paid events, offering full integration with email marketing and CRM.",
     "authType": "credentials",
     "organization": "odoo",
     "categories": [
-      "odoo", "plm"
+      "odoo", "event"
     ],
-    "odoo-model": "mrp.eco",
-    "code": "plm",
+    "odoo-model": "event.event",
+    "code": "event",
     "config": {
       "list": [
         "domainURL",

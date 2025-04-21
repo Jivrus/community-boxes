@@ -1,6 +1,6 @@
 {
-    "__id": "odoo-plm",
-    "name": "Odoo plm",
+    "__id": "odoo-planning",
+    "name": "Odoo Planning",
     "status": "alpha",
     "type": "odoo",
     "supports": [
@@ -8,14 +8,14 @@
     ],
     "logo": "https://storage.googleapis.com/jivrus-web-images/jcp/box/odoo/icon-hi.png",
     "connectorType": "odoo",
-    "description": "Odoo is a suite of open source business apps that cover all your company needs: The Odoo PLM app streamlines product development with real-time engineering change management. Designers can collaborate using version control and approvals. It enhances productivity and reduces errors across the product lifecycle.",
+    "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo Planning helps manage employee schedules, shifts, and resource allocation efficiently. It allows managers to assign tasks, plan workloads, and visualize timelines using a Gantt view. Employees can view their schedules and get notified of changes. It’s ideal for organizing teams, avoiding scheduling conflicts, and optimizing productivity.",
     "authType": "credentials",
     "organization": "odoo",
     "categories": [
-      "odoo", "plm"
+      "odoo", "planning"
     ],
-    "odoo-model": "mrp.eco",
-    "code": "plm",
+    "odoo-model": "planning.slot",
+    "code": "planning",
     "config": {
       "list": [
         "domainURL",

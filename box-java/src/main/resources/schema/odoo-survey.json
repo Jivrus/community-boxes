@@ -1,6 +1,6 @@
 {
-    "__id": "odoo-plm",
-    "name": "Odoo plm",
+    "__id": "odoo-survey",
+    "name": "Odoo Survey",
     "status": "alpha",
     "type": "odoo",
     "supports": [
@@ -8,14 +8,14 @@
     ],
     "logo": "https://storage.googleapis.com/jivrus-web-images/jcp/box/odoo/icon-hi.png",
     "connectorType": "odoo",
-    "description": "Odoo is a suite of open source business apps that cover all your company needs: The Odoo PLM app streamlines product development with real-time engineering change management. Designers can collaborate using version control and approvals. It enhances productivity and reduces errors across the product lifecycle.",
+    "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo Survey is a powerful tool for creating and managing online surveys, quizzes, and feedback forms. It supports various question types, scoring, and conditional logic. Results are automatically collected and analyzed with visual reports. It’s perfect for customer feedback, employee evaluations, and event registrations.",
     "authType": "credentials",
     "organization": "odoo",
     "categories": [
-      "odoo", "plm"
+      "odoo", "survey"
     ],
-    "odoo-model": "mrp.eco",
-    "code": "plm",
+    "odoo-model": "survey.survey",
+    "code": "survey",
     "config": {
       "list": [
         "domainURL",

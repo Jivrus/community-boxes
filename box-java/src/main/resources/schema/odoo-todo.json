@@ -1,6 +1,6 @@
 {
-    "__id": "odoo-plm",
-    "name": "Odoo plm",
+    "__id": "odoo-todo",
+    "name": "Odoo To-Do",
     "status": "alpha",
     "type": "odoo",
     "supports": [
@@ -8,14 +8,14 @@
     ],
     "logo": "https://storage.googleapis.com/jivrus-web-images/jcp/box/odoo/icon-hi.png",
     "connectorType": "odoo",
-    "description": "Odoo is a suite of open source business apps that cover all your company needs: The Odoo PLM app streamlines product development with real-time engineering change management. Designers can collaborate using version control and approvals. It enhances productivity and reduces errors across the product lifecycle.",
+    "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo To-Do is a simple task management tool that helps users organize and track their daily activities. It allows users to create, assign, and prioritize tasks within a personal or team workspace. Tasks can be marked as complete, scheduled with deadlines, and grouped by stages. It's useful for boosting productivity and ensuring that nothing important is forgotten.",
     "authType": "credentials",
     "organization": "odoo",
     "categories": [
-      "odoo", "plm"
+      "odoo", "todo"
     ],
-    "odoo-model": "mrp.eco",
-    "code": "plm",
+    "odoo-model": "project.task",
+    "code": "todo",
     "config": {
       "list": [
         "domainURL",

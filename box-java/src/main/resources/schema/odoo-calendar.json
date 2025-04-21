@@ -1,6 +1,6 @@
 {
-    "__id": "odoo-plm",
-    "name": "Odoo plm",
+    "__id": "odoo-calendar",
+    "name": "Odoo Calendar",
     "status": "alpha",
     "type": "odoo",
     "supports": [
@@ -8,14 +8,14 @@
     ],
     "logo": "https://storage.googleapis.com/jivrus-web-images/jcp/box/odoo/icon-hi.png",
     "connectorType": "odoo",
-    "description": "Odoo is a suite of open source business apps that cover all your company needs: The Odoo PLM app streamlines product development with real-time engineering change management. Designers can collaborate using version control and approvals. It enhances productivity and reduces errors across the product lifecycle.",
+    "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo Calendar is a scheduling and event management module that helps users organize meetings, appointments, and activities. It integrates seamlessly with other apps like CRM, Projects, and Employees. Users can create recurring events, invite attendees, and set reminders. The calendar also supports drag-and-drop rescheduling and synchronization with external calendars like Google Calendar.",
     "authType": "credentials",
     "organization": "odoo",
     "categories": [
-      "odoo", "plm"
+      "odoo", "calendar"
     ],
-    "odoo-model": "mrp.eco",
-    "code": "plm",
+    "odoo-model": "calendar.event",
+    "code": "calendar",
     "config": {
       "list": [
         "domainURL",
