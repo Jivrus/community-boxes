@@ -14,7 +14,7 @@
     "categories": [
       "odoo", "linktracker"
     ],
-    "odoo-model": "utm.",
+    "odoo-model": "utm.campaign",
     "code": "linktracker",
     "config": {
       "list": [

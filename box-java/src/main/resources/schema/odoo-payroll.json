@@ -14,7 +14,7 @@
     "categories": [
       "odoo", "payroll"
     ],
-    "odoo-model": "hr.work.entry",
+    "odoo-model": "hr.contract",
     "code": "payroll",
     "config": {
       "list": [
