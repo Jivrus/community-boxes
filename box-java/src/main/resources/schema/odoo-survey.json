@@ -1,0 +1,80 @@
+{
+    "__id": "odoo-survey",
+    "name": "Odoo Survey",
+    "status": "alpha",
+    "type": "odoo",
+    "supports": [
+      "object"
+    ],
+    "logo": "https://storage.googleapis.com/jivrus-web-images/jcp/box/odoo/icon-hi.png",
+    "connectorType": "odoo",
+    "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo Survey is a powerful tool for creating and managing online surveys, quizzes, and feedback forms. It supports various question types, scoring, and conditional logic. Results are automatically collected and analyzed with visual reports. It’s perfect for customer feedback, employee evaluations, and event registrations.",
+    "authType": "credentials",
+    "organization": "odoo",
+    "categories": [
+      "odoo", "survey"
+    ],
+    "odoo-model": "survey.survey",
+    "code": "survey",
+    "config": {
+      "list": [
+        "domainURL",
+        "database",
+        "username",
+        "password"
+      ],
+      "domainURL": {
+        "name": "Domain URL",
+        "dataType": "string",
+        "icon": "http",
+        "required": true
+      },
+      "database": {
+        "name": "Database",
+        "dataType": "string",
+        "icon": "storage",
+        "required": true
+      },
+      "username": {
+        "name": "Username",
+        "dataType": "string",
+        "icon": "person",
+        "required": true
+      },
+      "password": {
+        "name": "Password or API Key",
+        "dataType": "password",
+        "icon": "security",
+        "required": true
+      }
+    },
+    "functions": {
+      "list": [
+        "getobjects",
+        "getattributes"
+      ],
+      "getobjects": {
+        "name": "Get Objects",
+        "__id": "getobjects",
+        "functionName": "objects"
+      },
+      "getattributes": {
+        "__id": "getattributes",
+        "name": "Get Attributes",
+        "functionName": "attributes",
+        "input": {
+          "list": [
+            "object"
+          ],
+          "object": {
+            "name": "object",
+            "dataType": "string",
+            "required": true
+          }
+        }
+      }
+    },
+    "objects": {
+      "list": []
+    }
+  }

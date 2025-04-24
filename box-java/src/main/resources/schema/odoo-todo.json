@@ -1,0 +1,80 @@
+{
+    "__id": "odoo-todo",
+    "name": "Odoo To-Do",
+    "status": "alpha",
+    "type": "odoo",
+    "supports": [
+      "object"
+    ],
+    "logo": "https://storage.googleapis.com/jivrus-web-images/jcp/box/odoo/icon-hi.png",
+    "connectorType": "odoo",
+    "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo To-Do is a simple task management tool that helps users organize and track their daily activities. It allows users to create, assign, and prioritize tasks within a personal or team workspace. Tasks can be marked as complete, scheduled with deadlines, and grouped by stages. It's useful for boosting productivity and ensuring that nothing important is forgotten.",
+    "authType": "credentials",
+    "organization": "odoo",
+    "categories": [
+      "odoo", "todo"
+    ],
+    "odoo-model": "project.task",
+    "code": "todo",
+    "config": {
+      "list": [
+        "domainURL",
+        "database",
+        "username",
+        "password"
+      ],
+      "domainURL": {
+        "name": "Domain URL",
+        "dataType": "string",
+        "icon": "http",
+        "required": true
+      },
+      "database": {
+        "name": "Database",
+        "dataType": "string",
+        "icon": "storage",
+        "required": true
+      },
+      "username": {
+        "name": "Username",
+        "dataType": "string",
+        "icon": "person",
+        "required": true
+      },
+      "password": {
+        "name": "Password or API Key",
+        "dataType": "password",
+        "icon": "security",
+        "required": true
+      }
+    },
+    "functions": {
+      "list": [
+        "getobjects",
+        "getattributes"
+      ],
+      "getobjects": {
+        "name": "Get Objects",
+        "__id": "getobjects",
+        "functionName": "objects"
+      },
+      "getattributes": {
+        "__id": "getattributes",
+        "name": "Get Attributes",
+        "functionName": "attributes",
+        "input": {
+          "list": [
+            "object"
+          ],
+          "object": {
+            "name": "object",
+            "dataType": "string",
+            "required": true
+          }
+        }
+      }
+    },
+    "objects": {
+      "list": []
+    }
+  }
