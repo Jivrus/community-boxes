@@ -15,7 +15,7 @@ jobs:
         run: |
           curl -X POST -H "Content-Type: application/json" \
           -d '{"text": "🚀 Deployment started for PR #${{ github.event.pull_request.number }} in repository `${{ github.repository }}`."}' \
-          https://chat.googleapis.com/v1/spaces/AAQA-MJ2Cgg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=1i-8OxHswcVbPOcCmPyYq7HzfoM9sOmpSSrDZPM4oZk
+          https://chat.googleapis.com/v1/spaces/AAQA-MJ2Cgg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=1i-8OxHswcVbPOcCmPyYq7HzfoM9sOmpSSrDZPM4oZk \
 
       # Checkout the code
       - name: Checkout Code
@@ -32,4 +32,4 @@ jobs:
         run: |
           curl -X POST -H "Content-Type: application/json" \
           -d '{"text": "✅ Deployment completed for PR #${{ github.event.pull_request.number }} in repository `${{ github.repository }}`."}' \
-          https://chat.googleapis.com/v1/spaces/AAQA-MJ2Cgg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=1i-8OxHswcVbPOcCmPyYq7HzfoM9sOmpSSrDZPM4oZk
+          https://chat.googleapis.com/v1/spaces/AAQA-MJ2Cgg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=1i-8OxHswcVbPOcCmPyYq7HzfoM9sOmpSSrDZPM4oZk \
