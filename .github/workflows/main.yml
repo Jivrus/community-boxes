@@ -9,6 +9,8 @@ jobs:
   deployment:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    env:
+      GOOGLE_CHAT_WEBHOOK: https://chat.googleapis.com/v1/spaces/AAQA-MJ2Cgg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=1i-8OxHswcVbPOcCmPyYq7HzfoM9sOmpSSrDZPM4oZk
     steps:
       # Notify Deployment Started
       - name: Notify Deployment Started in Google Chat
