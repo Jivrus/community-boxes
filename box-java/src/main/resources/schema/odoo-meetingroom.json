@@ -1,0 +1,80 @@
+{
+    "__id": "odoo-meetingroom",
+    "name": "Odoo Meeting Room",
+    "status": "alpha",
+    "type": "odoo",
+    "supports": [
+      "object"
+    ],
+    "logo": "https://storage.googleapis.com/jivrus-web-images/jcp/box/odoo/icon-hi.png",
+    "connectorType": "odoo",
+    "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo Meeting Room helps manage and book shared meeting spaces within an organization. Users can check availability, schedule meetings, and avoid conflicts through an integrated calendar. It streamlines room reservations and enhances internal coordination. The module ensures efficient use of meeting resources and facilities. ",
+    "authType": "credentials",
+    "organization": "odoo",
+    "categories": [
+      "odoo", "meetingroom"
+    ],
+    "odoo-model": "room.booking",
+    "code": "meetingroom",
+    "config": {
+      "list": [
+        "domainURL",
+        "database",
+        "username",
+        "password"
+      ],
+      "domainURL": {
+        "name": "Domain URL",
+        "dataType": "string",
+        "icon": "http",
+        "required": true
+      },
+      "database": {
+        "name": "Database",
+        "dataType": "string",
+        "icon": "storage",
+        "required": true
+      },
+      "username": {
+        "name": "Username",
+        "dataType": "string",
+        "icon": "person",
+        "required": true
+      },
+      "password": {
+        "name": "Password or API Key",
+        "dataType": "password",
+        "icon": "security",
+        "required": true
+      }
+    },
+    "functions": {
+      "list": [
+        "getobjects",
+        "getattributes"
+      ],
+      "getobjects": {
+        "name": "Get Objects",
+        "__id": "getobjects",
+        "functionName": "objects"
+      },
+      "getattributes": {
+        "__id": "getattributes",
+        "name": "Get Attributes",
+        "functionName": "attributes",
+        "input": {
+          "list": [
+            "object"
+          ],
+          "object": {
+            "name": "object",
+            "dataType": "string",
+            "required": true
+          }
+        }
+      }
+    },
+    "objects": {
+      "list": []
+    }
+  }

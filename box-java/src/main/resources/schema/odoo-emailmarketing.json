@@ -1,0 +1,80 @@
+{
+    "__id": "odoo-emailmarketing",
+    "name": "Odoo Email Marketing",
+    "status": "alpha",
+    "type": "odoo",
+    "supports": [
+      "object"
+    ],
+    "logo": "https://storage.googleapis.com/jivrus-web-images/jcp/box/odoo/icon-hi.png",
+    "connectorType": "odoo",
+    "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo Email Marketing is a user-friendly tool to design and send professional email campaigns. It allows targeting specific audiences with customizable templates and automation features. Campaign performance can be tracked in real time with detailed analytics. Seamlessly integrates with other Odoo apps like CRM and Contacts for efficient marketing workflows.",
+    "authType": "credentials",
+    "organization": "odoo",
+    "categories": [
+      "odoo", "emailmarketing"
+    ],
+    "odoo-model": "mailing.mailing",
+    "code": "emailmarketing",
+    "config": {
+      "list": [
+        "domainURL",
+        "database",
+        "username",
+        "password"
+      ],
+      "domainURL": {
+        "name": "Domain URL",
+        "dataType": "string",
+        "icon": "http",
+        "required": true
+      },
+      "database": {
+        "name": "Database",
+        "dataType": "string",
+        "icon": "storage",
+        "required": true
+      },
+      "username": {
+        "name": "Username",
+        "dataType": "string",
+        "icon": "person",
+        "required": true
+      },
+      "password": {
+        "name": "Password or API Key",
+        "dataType": "password",
+        "icon": "security",
+        "required": true
+      }
+    },
+    "functions": {
+      "list": [
+        "getobjects",
+        "getattributes"
+      ],
+      "getobjects": {
+        "name": "Get Objects",
+        "__id": "getobjects",
+        "functionName": "objects"
+      },
+      "getattributes": {
+        "__id": "getattributes",
+        "name": "Get Attributes",
+        "functionName": "attributes",
+        "input": {
+          "list": [
+            "object"
+          ],
+          "object": {
+            "name": "object",
+            "dataType": "string",
+            "required": true
+          }
+        }
+      }
+    },
+    "objects": {
+      "list": []
+    }
+  }
