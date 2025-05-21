@@ -1,0 +1,80 @@
+{
+    "__id": "odoo-attendance",
+    "name": "Odoo Attendance",
+    "status": "alpha",
+    "type": "odoo",
+    "supports": [
+      "object"
+    ],
+    "logo": "https://storage.googleapis.com/jivrus-web-images/jcp/box/odoo/icon-hi.png",
+    "connectorType": "odoo",
+    "description": "Odoo is a suite of open source business apps that cover all your company needs: Odoo Attendance helps track employee check-ins and check-outs with ease. It supports multiple login methods like barcode, RFID, or manual entry. Managers can monitor attendance records, work hours, and generate reports. Integrated with payroll, it streamlines HR and time management processes.",
+    "authType": "credentials",
+    "organization": "odoo",
+    "categories": [
+      "odoo", "attendance"
+    ],
+    "odoo-model": "hr.attendance",
+    "code": "attendance",
+    "config": {
+      "list": [
+        "domainURL",
+        "database",
+        "username",
+        "password"
+      ],
+      "domainURL": {
+        "name": "Domain URL",
+        "dataType": "string",
+        "icon": "http",
+        "required": true
+      },
+      "database": {
+        "name": "Database",
+        "dataType": "string",
+        "icon": "storage",
+        "required": true
+      },
+      "username": {
+        "name": "Username",
+        "dataType": "string",
+        "icon": "person",
+        "required": true
+      },
+      "password": {
+        "name": "Password or API Key",
+        "dataType": "password",
+        "icon": "security",
+        "required": true
+      }
+    },
+    "functions": {
+      "list": [
+        "getobjects",
+        "getattributes"
+      ],
+      "getobjects": {
+        "name": "Get Objects",
+        "__id": "getobjects",
+        "functionName": "objects"
+      },
+      "getattributes": {
+        "__id": "getattributes",
+        "name": "Get Attributes",
+        "functionName": "attributes",
+        "input": {
+          "list": [
+            "object"
+          ],
+          "object": {
+            "name": "object",
+            "dataType": "string",
+            "required": true
+          }
+        }
+      }
+    },
+    "objects": {
+      "list": []
+    }
+  }
