@@ -1,0 +1,17 @@
+{
+  "name": "box",
+  "version": "1.0.0",
+  "main": "test.js",
+  "type": "module",
+  "scripts": {
+    "start:box": "node node_modules\\box\\dist\\server.js",
+    "build:box": "node ./meta/MergeJson.cjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
