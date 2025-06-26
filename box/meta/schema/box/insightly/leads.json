@@ -1,0 +1,114 @@
+{
+   "__id":"leads",
+   "name":"Leads",
+   "type":"object",
+   "description":"Represents a lead in Insightly.",
+   "functions":"${include|leads_functions.json}",
+   "attributes":{
+      "fields":{
+         "list":[
+            "LEAD_ID",
+            "DATE_CREATED",
+            "DATE_UPDATED",
+            "FIRST_NAME",
+            "LAST_NAME",
+            "EMAIL",
+            "PHONE",
+            "COMPANY_NAME",
+            "LEAD_STATE",
+            "OWNER_USER_ID"
+         ],
+         "LEAD_ID":{
+            "__id":"LEAD_ID",
+            "name":"Lead ID",
+            "dataType":"number",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "primary":true,
+            "filterable":true
+         },
+         "DATE_CREATED":{
+            "__id":"DATE_CREATED",
+            "name":"Date Created",
+            "dataType":"datetime",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+         },
+         "DATE_UPDATED":{
+            "__id":"DATE_UPDATED",
+            "name":"Date Updated",
+            "dataType":"datetime",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+         },
+         "FIRST_NAME":{
+            "__id":"FIRST_NAME",
+            "name":"First Name",
+            "dataType":"string",
+            "required":false,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "LAST_NAME":{
+            "__id":"LAST_NAME",
+            "name":"Last Name",
+            "dataType":"string",
+            "required":false,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "EMAIL":{
+            "__id":"EMAIL",
+            "name":"Email",
+            "dataType":"string",
+            "required":false,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "PHONE":{
+            "__id":"PHONE",
+            "name":"Phone",
+            "dataType":"string",
+            "required":false,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "COMPANY_NAME":{
+            "__id":"COMPANY_NAME",
+            "name":"Company Name",
+            "dataType":"string",
+            "required":false,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "LEAD_STATE":{
+            "__id":"LEAD_STATE",
+            "name":"Lead State",
+            "dataType":"string",
+            "required":false,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "OWNER_USER_ID":{
+            "__id":"OWNER_USER_ID",
+            "name":"Owner User ID",
+            "dataType":"number",
+            "required":false,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         }
+      }
+   }
+}

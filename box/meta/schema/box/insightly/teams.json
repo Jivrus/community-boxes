@@ -1,0 +1,44 @@
+{
+   "__id":"teams",
+   "name":"Teams",
+   "type":"object",
+   "description":"Insightly Teams object",
+   "functions":"${include|teams_functions.json}",
+   "attributes":{
+      "fields":{
+         "list":[
+            "TEAMID",
+            "TEAMNAME",
+            "TEAMDESCRIPTION"
+         ],
+         "TEAMID":{
+            "__id":"TEAMID",
+            "name":"Team ID",
+            "dataType":"number",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "primary":true,
+            "filterable":true
+         },
+         "TEAMNAME":{
+            "__id":"TEAMNAME",
+            "name":"Team Name",
+            "dataType":"string",
+            "required":true,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "TEAMDESCRIPTION":{
+            "__id":"TEAMDESCRIPTION",
+            "name":"Team Description",
+            "dataType":"string",
+            "required":false,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         }
+      }
+   }
+}
