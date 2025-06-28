@@ -1,0 +1,271 @@
+{
+   "list":[
+      "getattributes",
+      "get",
+      "getById",
+      "create",
+      "update",
+      "deleteById"
+   ],
+   "getattributes":{
+      "__id":"getattributes",
+      "name":"Get Attributes",
+      "functionName":"execute",
+      "hidden":true
+   },
+   "get":{
+      "__id":"get",
+      "name":"Get",
+      "functionName":"execute",
+      "crudType":"R",
+      "dataFlow":"pull",
+      "options":{
+         "filter":false,
+         "sort":false,
+         "maxPageSize":100
+      },
+      "httpOptions":{
+         "method":"get",
+         "preProcessor":{
+            "uriPath":"/lists/${tasklistid}/tasks"
+         }
+      },
+      "input": {
+            "list": [
+              "query",
+              "options"
+            ],
+            "options": {
+              "name": "options",
+              "dataType": "object",
+              "list": [
+                "tasklistid"
+              ],
+              "tasklistid": {
+                "__id": "tasklistid",
+                "name": "Tasklist Id",
+                "dataType": "string",
+                "required": true
+              }
+            },
+            "query": {
+              "name": "query",
+              "dataType": "query",
+              "required": true
+            }
+      }
+      
+   },
+   "getById":{
+      "__id":"getById",
+      "name":"Get By ID",
+      "functionName":"getById",
+      "crudType":"R",
+      "dataFlow":"pull",
+      "httpOptions":{
+         "method":"get",
+         "preProcessor":{
+            "uriPath":"/lists/${tasklistid}/tasks/${id}"
+         }
+      },
+      "input": {
+            "list": [
+              "id",
+              "options"
+            ],
+            "id": {
+              "name": "id",
+              "dataType": "string",
+              "required": true
+            },
+            "options": {
+              "name": "options",
+              "dataType": "object",
+              "list": [
+                "tasklistid"
+              ],
+              "tasklistid": {
+                "__id": "tasklistid",
+                "name": "Tasklist Id",
+                "dataType": "string",
+                "required": true
+              }
+            }
+          }
+   },
+   "create":{
+      "__id":"create",
+      "name":"Create",
+      "functionName":"execute",
+      "crudType":"C",
+      "dataFlow":"push",
+      "httpOptions":{
+         "method":"post",
+         "preProcessor":{
+            "uriPath":"/lists/${tasklistid}/tasks",
+            "isSingleCreate":true,
+            "payload":{
+               "structure":{
+                "title": "${title}",
+                  "notes": "${notes}",
+                  "status": "${status}",
+                  "due": "${due}",
+                  "completed": "${completed}",
+                  "links": "${links}"
+               }
+            }
+         },
+         "postProcessor":{
+            "successStatus":[
+               "200",
+               "207"
+            ],
+            "responseHandler":{
+               "failure":{
+                  "dataPath":"lists"
+               }
+            }
+         }
+      },
+      "input": {
+            "list": [
+              "data",
+              "options"
+            ],
+            "options": {
+              "name": "options",
+              "dataType": "object",
+              "list": [
+                "tasklistid"
+              ],
+              "tasklistid": {
+                "__id": "tasklistid",
+                "name": "Tasklist Id",
+                "dataType": "string",
+                "required": true
+              }
+            },
+            "data": {
+              "name": "data",
+              "dataType": "array",
+              "hidden": true,
+              "required": true
+            }
+          }
+   },
+   "update":{
+      "__id":"update",
+      "name":"Update",
+      "functionName":"execute",
+      "crudType":"U",
+      "dataFlow":"push",
+      "httpOptions":{
+         "method":"put",
+         "preProcessor":{
+            "uriPath":"/lists/${tasklistid}/tasks/${payloadData.0.id}",
+            "isSingleCreate":true,
+            "payload":{
+               "structure":{
+                  "id": "${id}",
+                  "etag": "${etag}",
+                  "title": "${title}",
+                  "notes": "${notes}",
+                  "status": "${status}",
+                  "due": "${due}",
+                  "completed": "${completed}",
+                  "links": "${links}"
+               }
+            }
+         },
+         "postProcessor":{
+            "successStatus":[
+               "200",
+               "201",
+               "207"
+            ],
+            "responseHandler":{
+               "failure":{
+                  "dataPath":"error"
+               }
+            }
+         }
+      },
+      "input": {
+            "list": [
+              "data",
+              "options",
+              "id"
+            ],
+            "id": {
+               "name": "id",
+               "dataType": "string",
+               "required": true
+            },
+            "options": {
+              "name": "options",
+              "dataType": "object",
+              "list": [
+                "tasklistid"
+              ],
+              "tasklistid": {
+                "__id": "tasklistid",
+                "name": "Tasklist Id",
+                "dataType": "string",
+                "required": true
+              }
+            },
+            "data": {
+              "name": "data",
+              "dataType": "array",
+              "required": true
+            }
+          }
+   },
+   "deleteById":{
+      "__id":"deleteById",
+      "name":"Delete By Id",
+      "functionName":"deleteById",
+      "crudType":"D",
+      "dataFlow":"push",
+      "httpOptions":{
+         "method":"delete",
+         "preProcessor":{
+            "uriPath":"/lists/${tasklistid}/tasks/${id}"
+         },
+         "postProcessor":{
+            "successStatus":[
+               "204"
+            ],
+            "responseHandler":{
+               "failure":{
+                  "dataPath":"lists"
+               }
+            }
+         }
+      },
+      "input": {
+            "list": [
+              "id",
+              "options"
+            ],
+            "id": {
+              "name": "id",
+              "dataType": "string",
+              "required": true
+            },
+            "options": {
+              "name": "options",
+              "dataType": "object",
+              "list": [
+                "tasklistid"
+              ],
+              "tasklistid": {
+                "__id": "tasklistid",
+                "name": "Tasklist Id",
+                "dataType": "string",
+                "required": true
+              }
+            }
+          }
+   }
+}

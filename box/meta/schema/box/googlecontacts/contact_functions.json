@@ -1,0 +1,417 @@
+{
+   "list":[
+      "getattributes",
+      "get",
+      "getById",
+      "create",
+      "update",
+      "deleteById"
+   ],
+   "getattributes":{
+      "__id":"getattributes",
+      "name":"Get Attributes",
+      "functionName":"execute",
+      "hidden":true
+   },
+   "get":{
+      "__id":"get",
+      "name":"Get",
+      "functionName":"execute",
+      "crudType":"R",
+      "dataFlow":"pull",
+      "options":{
+         "filter":false,
+         "sort":false,
+         "maxPageSize":100
+      },
+      "httpOptions":{
+         "method":"get",
+         "preProcessor":{
+            "uriPath":"/people/me/connections?personFields=names,emailAddresses,phoneNumbers"
+         }
+      },
+      "input":{
+         "list":[
+            "query",
+            "options"
+         ],
+         "query":{
+            "name":"query",
+            "dataType":"query",
+            "required":false
+         },
+         "options":{
+            "name":"options",
+            "dataType":"object"
+         }
+      }
+   },
+   "getById":{
+      "__id":"getById",
+      "name":"Get By ID",
+      "functionName":"getById",
+      "crudType":"R",
+      "dataFlow":"pull",
+      "httpOptions":{
+         "method":"get",
+         "preProcessor":{
+            "uriPath":"/${id}?personFields=names,emailAddresses,phoneNumbers"
+         }
+      },
+      "input":{
+         "list":[
+            "id",
+            "options"
+         ],
+         "id":{
+            "name":"id",
+            "dataType":"string",
+            "required":true
+         },
+         "options":{
+            "name":"options",
+            "dataType":"object",
+            "method":"get"
+         }
+      }
+   },
+   "create":{
+      "__id":"create",
+      "name":"Create",
+      "functionName":"execute",
+      "crudType":"C",
+      "dataFlow":"push",
+      "httpOptions":{
+         "method":"post",
+         "preProcessor":{
+            "uriPath":"/people:createContact",
+            "isSingleCreate":true,
+            "payload":{
+               "structure":{
+                "emailAddresses": [
+                    {
+                      "value": "${emailAddress}",
+                      "type": "${emailAddressType}",
+                      "displayName": "${emailAddressDisplayName}"
+                    }
+                  ],
+                  "names": [
+                    {
+                      "familyName": "${familyName}",
+                      "givenName": "${givenName}",
+                      "middleName": "${middleName}",
+                      "unstructuredName": "${unstructuredName}"
+                    }
+                  ],
+                  "phoneNumbers": [
+                    {
+                      "value": "${phoneNumber}"
+                    }
+                  ],
+                  "addresses": [
+                    {
+                      "type": "${addressType}",
+                      "poBox": "${poBox}",
+                      "streetAddress": "${streetAddress}",
+                      "city": "${city}",
+                      "region": "${region}",
+                      "postalCode": "${postalCode}",
+                      "country": "${country}"
+                    }
+                  ],
+                  "biographies": [
+                    {
+                      "value": "${biography}"
+                    }
+                  ],
+                  "birthdays": [
+                    {
+                      "date": {
+                        "year": "${birthYear}",
+                        "month": "${birthMonth}",
+                        "day": "${birthDay}"
+                      }
+                    }
+                  ],
+                  "externalIds": [
+                    {
+                      "value": "${externalIdValue}",
+                      "type": "${externalIdType}"
+                    }
+                  ],
+                  "genders": [
+                    {
+                      "value": "${genderValue}",
+                      "addressMeAs": "${addressMeAs}"
+                    }
+                  ],
+                  "imClients": [
+                    {
+                      "username": "${imClientUserName}",
+                      "type": "${imClientType}",
+                      "protocol": "${imClientsProtocol}"
+                    }
+                  ],
+                  "interests": [
+                    {
+                      "value": "${interest}"
+                    }
+                  ],
+                  "nicknames": [
+                    {
+                      "value": "${nickname}"
+                    }
+                  ],
+                  "occupations": [
+                    {
+                      "value": "${occupation}"
+                    }
+                  ],
+                  "organizations": [
+                    {
+                      "name": "${organizationName}",
+                      "type": "${organizationType}",
+                      "department": "${organizationDepartment}",
+                      "title": "${organizationTitle}",
+                      "jobDescription": "${organizationJobDescription}"
+                    }
+                  ],
+                  "relations": [
+                    {
+                      "person": "${relationPerson}",
+                      "type": "${relationType}"
+                    }
+                  ],
+                  "urls": [
+                    {
+                      "value": "${urlValue}",
+                      "type": "${urlType}"
+                    }
+                  ]
+               }
+            }
+         },
+         "postProcessor":{
+            "successStatus":[
+               "200",
+               "207"
+            ],
+            "responseHandler":{
+               "failure":{
+                  "dataPath":"googlecontacts"
+               }
+            }
+         }
+      },
+      "input":{
+         "list":[
+            "data",
+            "options"
+         ],
+         "data":{
+            "name":"data",
+            "dataType":"array"
+         },
+         "options":{
+            "name":"options",
+            "dataType":"object"
+         }
+      }
+   },
+   "update": {
+  "__id": "update",
+  "name": "Update",
+  "functionName": "execute",
+  "crudType": "U",
+  "dataFlow": "push",
+  "httpOptions": {
+    "method": "Patch",
+    "preProcessor": {
+      "uriPath": "/${payloadData.0.resourceName}:updateContact?updatePersonFields=names,emailAddresses,phoneNumbers"
+,
+      "isSingleCreate": true,
+      "payload": {
+        "structure": {
+          "resourceName": "${resourceName}",
+          "etag": "${etag}",
+          
+          "emailAddresses": [
+            {
+              "value": "${emailAddress}",
+              "type": "${emailAddressType}",
+              "displayName": "${emailAddressDisplayName}"
+            }
+          ],
+          "names": [
+            {
+              "familyName": "${familyName}",
+              "givenName": "${givenName}",
+              "middleName": "${middleName}",
+              "unstructuredName": "${unstructuredName}"
+            }
+          ],
+          "phoneNumbers": [
+            {
+              "value": "${phoneNumber}"
+            }
+          ],
+          "addresses": [
+            {
+              "type": "${addressType}",
+              "poBox": "${poBox}",
+              "streetAddress": "${streetAddress}",
+              "city": "${city}",
+              "region": "${region}",
+              "postalCode": "${postalCode}",
+              "country": "${country}"
+            }
+          ],
+          "biographies": [
+            {
+              "value": "${biography}"
+            }
+          ],
+          "birthdays": [
+            {
+              "date": {
+                "year": "${birthYear}",
+                "month": "${birthMonth}",
+                "day": "${birthDay}"
+              }
+            }
+          ],
+          "externalIds": [
+            {
+              "value": "${externalIdValue}",
+              "type": "${externalIdType}"
+            }
+          ],
+          "genders": [
+            {
+              "value": "${genderValue}",
+              "addressMeAs": "${addressMeAs}"
+            }
+          ],
+          "imClients": [
+            {
+              "username": "${imClientUserName}",
+              "type": "${imClientType}",
+              "protocol": "${imClientsProtocol}"
+            }
+          ],
+          "interests": [
+            {
+              "value": "${interest}"
+            }
+          ],
+          "nicknames": [
+            {
+              "value": "${nickname}"
+            }
+          ],
+          "occupations": [
+            {
+              "value": "${occupation}"
+            }
+          ],
+          "organizations": [
+            {
+              "name": "${organizationName}",
+              "type": "${organizationType}",
+              "department": "${organizationDepartment}",
+              "title": "${organizationTitle}",
+              "jobDescription": "${organizationJobDescription}"
+            }
+          ],
+          "relations": [
+            {
+              "person": "${relationPerson}",
+              "type": "${relationType}"
+            }
+          ],
+          "urls": [
+            {
+              "value": "${urlValue}",
+              "type": "${urlType}"
+            }
+          ]
+        }
+      }
+    },
+    "postProcessor": {
+      "successStatus": [
+        "200",
+        "201",
+        "207"
+      ],
+      "responseHandler": {
+        "failure": {
+          "dataPath": "googlecontacts"
+        }
+      }
+    }
+  },
+  "input": {
+    "list": [
+      "data",
+      "options"
+    ],
+    "data": {
+      "name": "data",
+      "dataType": "array"
+    },
+    "options": {
+      "name": "options",
+      "dataType": "object",
+      "list": [
+        "updatePersonFields"
+      ],
+      "updatePersonFields": {
+        "__id": "updatePersonFields",
+        "name": "updatePersonFields",
+        "dataType": "string",
+        "required": true
+      }
+    }
+  }
+},
+   "deleteById":{
+      "__id":"deleteById",
+      "name":"Delete By Id",
+      "functionName":"deleteById",
+      "crudType":"D",
+      "dataFlow":"push",
+      "httpOptions":{
+         "method":"delete",
+         "preProcessor":{
+            "uriPath":"/${id}:deleteContact"
+         },
+         "postProcessor":{
+            "successStatus":[
+               "200", "204"
+            ],
+            "responseHandler":{
+               "failure":{
+                  "dataPath":"googlecontacts"
+               }
+            }
+         }
+      },
+      "input":{
+         "list":[
+            "id",
+            "options"
+         ],
+         "id":{
+            "name":"id",
+            "dataType":"string",
+            "required":true
+         },
+         "options":{
+            "name":"options",
+            "dataType":"object",
+            "method":"get"
+         }
+      }
+   }
+}

@@ -1,0 +1,44 @@
+{
+   "__id":"tasklists",
+   "name":"Tasklists",
+   "type":"object",
+   "description":"Represents a list of tasks.",
+   "functions":"${include|tasklists_functions.json}",
+   "attributes":{
+      "fields":{
+         "list":[
+            "id",
+            "title",
+            "updated"
+         ],
+         "id":{
+            "__id":"id",
+            "name":"ID",
+            "dataType":"string",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "primary":true,
+            "filterable":true
+         },
+         "title":{
+            "__id":"title",
+            "name":"Title",
+            "dataType":"string",
+            "required":true,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "updated":{
+            "__id":"updated",
+            "name":"Updated",
+            "dataType":"datetime",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+         }
+      }
+   }
+}

@@ -1,0 +1,54 @@
+{
+   "__id":"organizations",
+   "name":"Organizations",
+   "type":"object",
+   "description":"Represents an organization in Insightly.",
+   "functions":"${include|organizations_functions.json}",
+   "attributes":{
+      "fields":{
+         "list":[
+            "ORGANIZATIONID",
+            "ORGANISATIONNAME",
+            "DATE_CREATED",
+            "DATE_UPDATED"
+         ],
+         "ORGANIZATIONID":{
+            "__id":"ORGANIZATIONID",
+            "name":"Organization ID",
+            "dataType":"number",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "primary":true,
+            "filterable":true
+         },
+         "ORGANISATIONNAME":{
+            "__id":"ORGANISATIONNAME",
+            "name":"Organization Name",
+            "dataType":"string",
+            "required":true,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "DATE_CREATED":{
+            "__id":"DATE_CREATED",
+            "name":"Date Created",
+            "dataType":"datetime",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+         },
+         "DATE_UPDATED":{
+            "__id":"DATE_UPDATED",
+            "name":"Date Updated",
+            "dataType":"datetime",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+         }
+      }
+   }
+}

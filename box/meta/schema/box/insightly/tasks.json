@@ -1,0 +1,89 @@
+{
+   "__id":"tasks",
+   "name":"Tasks",
+   "type":"object",
+   "description":"Represents a task in Insightly.",
+   "functions":"${include|tasks_functions.json}",
+   "attributes":{
+      "fields":{
+         "list":[
+            "TASKID",
+            "TITLE",
+            "STATUS",
+            "DATE_CREATED",
+            "RESPONSIBLE_USER_ID",
+            "DUE_DATE",
+            "DETAILS"
+         ],
+         "TASKID":{
+            "__id":"TASKID",
+            "name":"Task ID",
+            "dataType":"number",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "primary":true,
+            "filterable":true
+         },
+         "TITLE":{
+            "__id":"TITLE",
+            "name":"Title",
+            "dataType":"string",
+            "required":true,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "STATUS":{
+            "__id":"STATUS",
+            "name":"Status",
+            "dataType":"string",
+            "required":true,
+            "writable":true,
+            "sortable":true,
+            "filterable":true,
+            "options":[
+               "Not Started",
+               "In Progress",
+               "Completed"
+            ]
+         },
+         "DATE_CREATED":{
+            "__id":"DATE_CREATED",
+            "name":"Date Created",
+            "dataType":"datetime",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+         },
+         "RESPONSIBLE_USER_ID":{
+            "__id":"RESPONSIBLE_USER_ID",
+            "name":"Responsible User ID",
+            "dataType":"number",
+            "required":true,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "DUE_DATE":{
+            "__id":"DUE_DATE",
+            "name":"Due Date",
+            "dataType":"datetime",
+            "required":true,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "DETAILS":{
+            "__id":"DETAILS",
+            "name":"Details",
+            "dataType":"string",
+            "required":false,
+            "writable":true,
+            "sortable":false,
+            "filterable":true
+         }
+      }
+   }
+}

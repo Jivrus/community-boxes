@@ -1,0 +1,134 @@
+{
+   "__id":"tasks",
+   "name":"Tasks",
+   "type":"object",
+   "description":"Represents a Google Task.",
+   "functions":"${include|tasks_functions.json}",
+   "attributes":{
+      "fields":{
+         "list": [
+            "kind",
+            "id",
+            "etag",
+            "title",
+            "updated",
+            "selfLink",
+            "parent",
+            "position",
+            "notes",
+            "status",
+            "due",
+            "completed",
+            "deleted",
+            "hidden",
+            "links",
+            "tasklistid"
+          ],
+          "kind": {
+            "__id": "kind",
+            "name": "Kind",
+            "dataType": "string",
+            "filterable": false,
+            "writable": false
+          },
+          "id": {
+            "__id": "id",
+            "name": "Id",
+            "dataType": "string",
+            "required": true,
+            "writable": false,
+            "primary": true
+          },
+          "tasklistid": {
+            "__id": "tasklistid",
+            "name": "Tasklist Id",
+            "dataType": "string",
+            "writable": false,
+            "relation": {
+              "object": "tasklist",
+              "attribute": "id",
+              "name": "title"
+            }
+          },
+          "etag": {
+            "__id": "etag",
+            "name": "Etag",
+            "dataType": "string",
+            "writable": false
+          },
+          "title": {
+            "__id": "title",
+            "name": "Title",
+            "dataType": "string",
+            "required": true
+          },
+          "updated": {
+            "__id": "updated",
+            "name": "Updated",
+            "dataType": "datetime",
+            "filterable": true
+          },
+          "selfLink": {
+            "__id": "selfLink",
+            "name": "Self Link",
+            "dataType": "string",
+            "filterable": true
+          },
+          "parent": {
+            "__id": "parent",
+            "name": "Parent Task",
+            "dataType": "string",
+            "filterable": false
+          },
+          "position": {
+            "__id": "position",
+            "name": "Position Inside Tasklist",
+            "dataType": "string",
+            "filterable": false
+          },
+          "notes": {
+            "__id": "notes",
+            "name": "Notes",
+            "dataType": "string",
+            "filterable": false
+          },
+          "status": {
+            "__id": "status",
+            "name": "Status",
+            "dataType": "string",
+            "filterable": false
+          },
+          "due": {
+            "__id": "due",
+            "name": "Due Date",
+            "dataType": "datetime",
+            "filterable": true
+          },
+          "completed": {
+            "__id": "completed",
+            "name": "Completed",
+            "dataType": "string",
+            "filterable": true
+          },
+          "deleted": {
+            "__id": "deleted",
+            "name": "Deleted",
+            "dataType": "boolean",
+            "filterable": true
+          },
+          "hidden": {
+            "__id": "hidden",
+            "name": "Hidden",
+            "dataType": "boolean",
+            "writable": false
+          },
+          "links": {
+            "__id": "links",
+            "name": "Deleted",
+            "dataType": "array",
+            "writable": false
+          }
+        }
+      }
+    }
+   

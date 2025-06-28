@@ -1,0 +1,74 @@
+{
+   "__id":"contacts",
+   "name":"Contacts",
+   "type":"object",
+   "description":"Represents a contact in Insightly.",
+   "functions":"${include|contacts_functions.json}",
+   "attributes":{
+      "fields":{
+         "list":[
+            "CONTACTID",
+            "FIRSTNAME",
+            "LASTNAME",
+            "EMAIL",
+            "PHONE",
+            "ORGANISATIONID"
+         ],
+         "CONTACTID":{
+            "__id":"CONTACTID",
+            "name":"Contact ID",
+            "dataType":"number",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "primary":true,
+            "filterable":true
+         },
+         "FIRSTNAME":{
+            "__id":"FIRSTNAME",
+            "name":"First Name",
+            "dataType":"string",
+            "required":true,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "LASTNAME":{
+            "__id":"LASTNAME",
+            "name":"Last Name",
+            "dataType":"string",
+            "required":true,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "EMAIL":{
+            "__id":"EMAIL",
+            "name":"Email",
+            "dataType":"string",
+            "required":true,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "PHONE":{
+            "__id":"PHONE",
+            "name":"Phone",
+            "dataType":"string",
+            "required":false,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "ORGANISATIONID":{
+            "__id":"ORGANISATIONID",
+            "name":"Organization ID",
+            "dataType":"number",
+            "required":false,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         }
+      }
+   }
+}

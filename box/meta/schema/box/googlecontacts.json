@@ -1,0 +1,128 @@
+{
+   "__id":"googlecontacts",
+   "name":"google contacts",
+   "description":"Connector for Google Contacts",
+   "status":"alpha",
+   "type":"application",
+   "supports":[
+      "object"
+   ],
+   "logo":"",
+   "connectorType":"http",
+
+   "organization":"googlecontacts",
+   "categories":[
+      "crm",
+      "contact"
+   ],
+   "config":{
+      "list":[
+         "baseURL",
+         "accessToken"
+      ],
+      "baseURL":{
+         "name":"Base URL",
+         "dataType":"string",
+         "required":true,
+         "icon":"http",
+         "defaultValue":"https://people.googleapis.com/v1",
+         "writable":false
+      },
+      "authType":{
+         "name":"Authentication Type",
+         "dataType":"string",
+         "required":true,
+         "hidden":true,
+         "icon":"security",
+         "defaultValue":"oauth2"
+      },
+      "oauth2":{
+         "list":[
+             "accessToken",
+            "refreshToken"
+         ],
+         "accessToken":{
+            "name":"Access Token",
+            "dataType":"password",
+            "icon":"security",
+            "required":true
+         },
+         "refreshToken":{
+            "name":"Refresh Token",
+            "dataType":"password",
+            "required":true,
+            "icon":"security"
+         },
+         "options":{
+            "list":[
+               "headers"
+            ],
+            "headers":{
+               "Authorization":"Bearer ${accessToken}",
+               "Content-Type":"application/json"
+            },
+            "connection":{
+               "input":{
+                  "list":[
+                     "query",
+                     "options"
+                  ],
+                  "query":{
+                     "name":"query",
+                     "dataType":"query",
+                     "required":false
+                  },
+                  "options":{
+                     "name":"Options",
+                     "dataType":"object"
+                  },
+                  "httpOptions":{
+                     "preProcessor":{
+                        "uriPath":"/people/me"
+                     },
+                     "postProcessor":{
+                        "successStatus":[
+                           "200"
+                        ]
+                     }
+                  }
+               }
+            }
+         }
+      }
+   },
+   "functions":{
+      "list":[
+         "getobjects",
+         "getattributes"
+      ],
+      "getobjects":{
+         "__id":"getobjects",
+         "name":"Get Objects",
+         "functionName":"objects",
+         "crudType":"R"
+      },
+      "getattributes":{
+         "__id":"getattributes",
+         "name":"Get Attributes",
+         "crudType":"R",
+         "functionName":"attributes",
+         "input":{
+            "list":[
+               "object"
+            ],
+            "object":{
+               "name":"object",
+               "dataType":"string",
+               "required":true
+            }
+         }
+      }
+   },
+   "objects":{
+      "list":[
+         "contact"
+      ],
+      "contact":"${include|contact.json}"
+   }
+}
