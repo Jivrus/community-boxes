@@ -59,7 +59,7 @@
    "getById":{
       "__id":"getById",
       "name":"Get By ID",
-      "functionName":"execute",
+      "functionName":"getById",
       "crudType":"R",
       "dataFlow":"pull",
       "httpOptions":{
@@ -137,7 +137,7 @@
       "httpOptions":{
          "method":"put",
          "preProcessor":{
-            "uriPath":"/contacts/${CONTACTID}",
+            "uriPath":"/people/${CONTACTID}:updateContact",
             "isSingleCreate":true,
             "payload":{
                "structure":{
@@ -182,7 +182,7 @@
    "deleteById":{
       "__id":"deleteById",
       "name":"Delete By Id",
-      "functionName":"execute",
+      "functionName":"deleteById",
       "crudType":"D",
       "dataFlow":"push",
       "httpOptions":{
