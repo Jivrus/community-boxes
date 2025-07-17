@@ -1,0 +1,88 @@
+{
+   "__id":"squarespace",
+   "name":"Squarespace",
+   "description":"Squarespace API connector.  Note: Comprehensive API documentation was not available for complete analysis; this connector is based on speculation of common REST API practices.",
+   "status":"alpha",
+   "type":"application",
+   "supports":[
+      "object"
+   ],
+   "logo":"",
+   "connectorType":"http",
+   "organization":"squarespace",
+   "categories":[
+      "website"
+   ],
+   "config":{
+      "list":[
+         "baseURL",
+         "key"
+         
+      ],
+      "baseURL":{
+         "name":"Base URL",
+         "dataType":"string",
+         "required":true,
+         "icon":"http",
+         "defaultValue":"https://api.squarespace.com/1.0/commerce",
+         "writable":false
+      },
+      
+         "key":{
+            "name": "API Key",
+            "dataType": "password",
+            "defaultValue": "",
+            "required": true,
+            "icon": "security",
+            "writable":false
+         },
+         "options":{
+            "list":[
+               "headers"
+            ],
+            "headers":{
+               "Authorization":"Bearer ${key}",
+               "Content-Type":"application/json"
+            }
+         }
+      
+   },
+   "functions":{
+      "list":[
+         "getobjects",
+         "getattributes"
+      ],
+      "getobjects":{
+         "__id":"getobjects",
+         "name":"Get Objects",
+         "functionName":"objects",
+         "crudType":"R"
+      },
+      "getattributes":{
+         "__id":"getattributes",
+         "name":"Get Attributes",
+         "crudType":"R",
+         "functionName":"attributes",
+         "input":{
+            "list":[
+               "object"
+            ],
+            "object":{
+               "name":"object",
+               "dataType":"string",
+               "required":true
+            }
+         }
+      }
+   },
+   "objects":{
+      "list":[
+         "orders",
+         "products",
+         "inventory"
+      ],
+      "orders":"${include|orders.json}",
+      "products":"${include|products.json}",
+      "inventory":"${include|inventory.json}"
+   }
+}

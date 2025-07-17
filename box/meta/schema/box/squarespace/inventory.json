@@ -1,0 +1,54 @@
+{
+   "__id":"inventory",
+   "name":"Inventory",
+   "type":"object",
+   "description":"Squarespace Inventory Object",
+   "functions":"${include|inventory_functions.json}",
+   "attributes":{
+      "fields":{
+         "list":[
+            "id",
+            "itemName",
+            "itemQuantity",
+            "itemPrice"
+         ],
+         "id":{
+            "__id":"id",
+            "name":"Item ID",
+            "dataType":"string",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "primary":true,
+            "filterable":true
+         },
+         "itemName":{
+            "__id":"itemName",
+            "name":"Item Name",
+            "dataType":"string",
+            "required":true,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "itemQuantity":{
+            "__id":"itemQuantity",
+            "name":"Item Quantity",
+            "dataType":"number",
+            "required":true,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "itemPrice":{
+            "__id":"itemPrice",
+            "name":"Item Price",
+            "dataType":"number",
+            "required":true,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         }
+      }
+   }
+}

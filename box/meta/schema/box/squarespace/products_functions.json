@@ -1,0 +1,230 @@
+{
+   "list":[
+      "getattributes",
+      "get",
+      "getById",
+      "create",
+      "update",
+      "deleteById"
+   ],
+   "getattributes":{
+      "__id":"getattributes",
+      "name":"Get Attributes",
+      "functionName":"execute",
+      "hidden":true
+   },
+   "get":{
+      "__id":"get",
+      "name":"Get",
+      "functionName":"execute",
+      "crudType":"R",
+      "dataFlow":"pull",
+      "options":{
+         "filter":false,
+         "sort":false,
+         "maxPageSize":100
+      },
+      "httpOptions":{
+         "method":"get",
+         "preProcessor":{
+            "uriPath":"/products"
+         }
+      },
+      "input":{
+         "list":[
+            "query",
+            "options"
+         ],
+         "query":{
+            "name":"query",
+            "dataType":"query",
+            "required":false
+         },
+         "options":{
+            "name":"options",
+            "dataType":"object"
+         }
+      }
+   },
+   "getById":{
+      "__id":"getById",
+      "name":"Get By ID",
+      "functionName":"getById",
+      "crudType":"R",
+      "dataFlow":"pull",
+      "httpOptions":{
+         "method":"get",
+         "preProcessor":{
+            "uriPath":"/products/${id}"
+         }
+      },
+      "input":{
+         "list":[
+            "id",
+            "options"
+         ],
+         "id":{
+            "name":"id",
+            "dataType":"string",
+            "required":true
+         },
+         "options":{
+            "name":"options",
+            "dataType":"object",
+            "method":"get"
+         }
+      }
+   },
+   "create":{
+      "__id":"create",
+      "name":"Create",
+      "functionName":"execute",
+      "crudType":"C",
+      "dataFlow":"push",
+      "httpOptions":{
+         "method":"post",
+         "preProcessor":{
+            "uriPath":"/products",
+            "isSingleCreate":true,
+            "payload": {
+               "structure": {
+                  "type": "PHYSICAL",
+                  "storePageId": "${storePageId}",
+                  "name": "${name}",
+                  "description": "${description}",
+                  "isVisible": "${isVisible}",
+                  "variants": [
+                  {
+                     "sku": "${sku}",
+                     "pricing": {
+                        "basePrice": {
+                           "currency": "${currency}",
+                           "value": "${price}"
+                        },
+                        "onSale": false,
+                        "salePrice": {
+                              "currency": "${currency}",
+                              "value": "0.00"
+                        }
+                     },
+                     "stock": {
+                        "quantity": "${stockQuantity}",
+                        "unlimited": false
+                     }
+                  }]
+               }
+            }
+         },
+         "postProcessor":{
+            "successStatus":[
+               "200"
+            ],
+            "responseHandler":{
+               "failure":{
+                  "dataPath":"products"
+               }
+            }
+         }
+      },
+      "input":{
+         "list":[
+            "data",
+            "options"
+         ],
+         "data":{
+            "name":"data",
+            "dataType":"array"
+         },
+         "options":{
+            "name":"options",
+            "dataType":"object"
+         }
+      }
+   },
+   "update":{
+      "__id":"update",
+      "name":"Update",
+      "functionName":"execute",
+      "crudType":"U",
+      "dataFlow":"push",
+      "httpOptions":{
+         "method":"put",
+         "preProcessor":{
+            "uriPath":"/products/${id}",
+            "isSingleCreate":true,
+            "payload":{
+               "structure":{
+                    "id":"${id}",
+                    "productName":"${productName}",
+                    "productDescription":"${productDescription}",
+                    "productPrice":"${productPrice}",
+                    "productImage":"${productImage}"
+               }
+            }
+         },
+         "postProcessor":{
+            "successStatus":[
+               "200"
+            ],
+            "responseHandler":{
+               "failure":{
+                  "dataPath":"products"
+               }
+            }
+         }
+      },
+      "input":{
+         "list":[
+            "data",
+            "options"
+         ],
+         "data":{
+            "name":"data",
+            "dataType":"array"
+         },
+         "options":{
+            "name":"options",
+            "dataType":"object"
+         }
+      }
+   },
+   "deleteById":{
+      "__id":"deleteById",
+      "name":"Delete By Id",
+      "functionName":"deleteById",
+      "crudType":"D",
+      "dataFlow":"push",
+      "httpOptions":{
+         "method":"delete",
+         "preProcessor":{
+            "uriPath":"/products/${id}"
+         },
+         "postProcessor":{
+            "successStatus":[
+               "204"
+            ],
+            "responseHandler":{
+               "failure":{
+                  "dataPath":"products"
+               }
+            }
+         }
+      },
+      "input":{
+         "list":[
+            "id",
+            "options"
+         ],
+         "id":{
+            "name":"id",
+            "dataType":"string",
+            "required":true
+         },
+         "options":{
+            "name":"options",
+            "dataType":"object",
+            "method":"get"
+         }
+      }
+   }
+}

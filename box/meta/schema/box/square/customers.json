@@ -1,0 +1,94 @@
+{
+   "__id":"customers",
+   "name":"Customers",
+   "type":"object",
+   "description":"Represents a Square customer.",
+   "functions":"${include|customers_functions.json}",
+   "attributes":{
+      "fields":{
+         "list":[
+            "id",
+            "given_name",
+            "family_name",
+            "email_address",
+            "phone_number",
+            "creation_time",
+            "updated_time",
+            "reference_id"
+         ],
+         "id":{
+            "__id":"id",
+            "name":"ID",
+            "dataType":"string",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "primary":true,
+            "filterable":true
+         },
+         "given_name":{
+            "__id":"given_name",
+            "name":"Given Name",
+            "dataType":"string",
+            "required":false,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "family_name":{
+            "__id":"family_name",
+            "name":"Family Name",
+            "dataType":"string",
+            "required":false,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "email_address":{
+            "__id":"email_address",
+            "name":"Email Address",
+            "dataType":"string",
+            "required":false,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "phone_number":{
+            "__id":"phone_number",
+            "name":"Phone Number",
+            "dataType":"string",
+            "required":false,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         },
+         "creation_time":{
+            "__id":"creation_time",
+            "name":"Creation Time",
+            "dataType":"datetime",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+         },
+         "updated_time":{
+            "__id":"updated_time",
+            "name":"Updated Time",
+            "dataType":"datetime",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+         },
+         "reference_id":{
+            "__id":"reference_id",
+            "name":"Reference ID",
+            "dataType":"string",
+            "required":false,
+            "writable":true,
+            "sortable":true,
+            "filterable":true
+         }
+      }
+   }
+}
