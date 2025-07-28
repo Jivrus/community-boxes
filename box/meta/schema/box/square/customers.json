@@ -21,73 +21,65 @@
             "name":"ID",
             "dataType":"string",
             "required":true,
-            "writable":false,
+            "filterable": true,
             "sortable":true,
-            "primary":true,
-            "filterable":true
+            "primary":true
          },
          "given_name":{
             "__id":"given_name",
             "name":"Given Name",
             "dataType":"string",
-            "required":false,
             "writable":true,
-            "sortable":true,
-            "filterable":true
+            "sortable":false,
+            "filterable":false
          },
          "family_name":{
             "__id":"family_name",
             "name":"Family Name",
             "dataType":"string",
-            "required":false,
             "writable":true,
-            "sortable":true,
-            "filterable":true
+            "sortable":false,
+            "filterable":false
          },
          "email_address":{
             "__id":"email_address",
             "name":"Email Address",
             "dataType":"string",
-            "required":false,
             "writable":true,
-            "sortable":true,
-            "filterable":true
+            "sortable":false,
+            "filterable":false
          },
          "phone_number":{
             "__id":"phone_number",
             "name":"Phone Number",
             "dataType":"string",
-            "required":false,
             "writable":true,
-            "sortable":true,
-            "filterable":true
+            "sortable":false,
+            "filterable":false
          },
          "creation_time":{
             "__id":"creation_time",
             "name":"Creation Time",
             "dataType":"datetime",
             "required":true,
-            "writable":false,
-            "sortable":true,
-            "filterable":true
+            "sortable":false,
+            "filterable":false
          },
          "updated_time":{
             "__id":"updated_time",
             "name":"Updated Time",
             "dataType":"datetime",
             "required":true,
-            "writable":false,
-            "sortable":true,
-            "filterable":true
+            "sortable":false,
+            "filterable":false
          },
          "reference_id":{
             "__id":"reference_id",
             "name":"Reference ID",
             "dataType":"string",
-            "required":false,
             "writable":true,
-            "sortable":true,
-            "filterable":true
+            "sortable":false,
+            "filterable":false
          }
       }
    }
