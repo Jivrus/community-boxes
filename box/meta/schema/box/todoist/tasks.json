@@ -1,0 +1,179 @@
+{
+   "__id":"tasks",
+   "name":"Tasks",
+   "type":"object",
+   "description":"Represents a Todoist task",
+   "functions":"${include|tasks_functions.json}",
+   "attributes":{
+      "fields":{
+         "list":[
+            "id",
+            "project_id",
+            "section_id",
+            "content",
+            "description",
+            "is_completed",
+            "label",
+            "parent_id",
+            "order",
+            "priority",
+            "due_string",
+            "due_date",
+            "due_is_recurring",
+            "due_datetime",
+            "due_timezone",
+            "due_lang",
+            "deadline_date",
+            "deadline_lang",
+            "url",
+            "comment_count",
+            "created_at",
+            "creator_id",
+            "assignee_id",
+            "assigner_id",
+            "duration_amount",
+            "duration_unit"
+         ],
+         "id":{
+            "__id":"id",
+            "name":"ID",
+            "dataType":"string",
+            "primary":true
+         },
+         "project_id":{
+            "__id":"project_id",
+            "name":"Project ID",
+            "dataType":"string",
+            "filterable":true
+         },
+         "section_id":{
+            "__id":"section_id",
+            "name":"Section ID",
+            "dataType":"string",
+            "filterable":true
+         },
+         "content":{
+            "__id":"content",
+            "name":"Content",
+            "dataType":"string"
+         },
+         "description":{
+            "__id":"description",
+            "name":"Description",
+            "dataType":"string"
+         },
+         "is_completed":{
+            "__id":"is_completed",
+            "name":"Is Completed",
+            "dataType":"boolean"
+         },
+         "label":{
+            "__id":"label",
+            "name":"Label",
+            "dataType":"string",
+            "filterable":true        
+         },
+         "parent_id":{
+            "__id":"parent_id",
+            "name":"Parent ID",
+            "dataType":"string"
+         },
+         "order":{
+            "__id":"order",
+            "name":"Order",
+            "dataType":"number"
+         },
+         "priority":{
+            "__id":"priority",
+            "name":"Priority",
+            "dataType":"number"
+         },
+        "due_string":{
+                     "__id":"due_string",
+                     "name":"Due String",
+                     "dataType":"string"
+        },
+        "due_date":{
+                     "__id":"due_date",
+                     "name":"Due Date",
+                     "dataType":"string"
+        },
+        "due_is_recurring":{
+                     "__id":"due_is_recurring",
+                     "name":"Due Is Recurring",
+                     "dataType":"boolean"
+        },
+        "due_datetime":{
+                     "__id":"due_datetime",
+                     "name":"Due Datetime",
+                     "dataType":"datetime"
+        },
+        "due_timezone":{
+                     "__id":"due_timezone",
+                     "name":"Due Timezone",
+                     "dataType":"string"
+        },
+        "due_lang":{
+                     "__id":"due_lang",
+                     "name":"Due Lang",
+                     "dataType":"string"
+         },
+        "deadline_date":{
+                     "__id":"deadline_date",
+                     "name":"Deadline Date",
+                     "dataType":"datetime"
+        },
+        "deadline_lang":{
+                     "__id":"deadline_lang",
+                     "name":"Deadline Lang",
+                     "dataType":"string"
+                  
+         },
+         "url":{
+            "__id":"url",
+            "name":"URL",
+            "dataType":"string"
+         },
+         "comment_count":{
+            "__id":"comment_count",
+            "name":"Comment Count",
+            "dataType":"number"
+         },
+         "created_at":{
+            "__id":"created_at",
+            "name":"Created At",
+            "dataType":"datetime"
+         },
+         "creator_id":{
+            "__id":"creator_id",
+            "name":"Creator ID",
+            "dataType":"string"
+         },
+         "assignee_id":{
+            "__id":"assignee_id",
+            "name":"Assignee ID",
+            "dataType":"string"
+         },
+         "assigner_id":{
+            "__id":"assigner_id",
+            "name":"Assigner ID",
+            "dataType":"string"
+         },
+        "duration_amount":{
+                     "__id":"duration_amount",
+                     "name":"Duration Amount",
+                     "dataType":"number"
+        },
+        "duration_unit":{
+            "__id":"duration_unit",
+            "name":"Duration Unit",
+            "dataType":"string",
+            "options":[
+                        "minute",
+                        "day"
+                ]
+        }
+      }
+   }
+                  
+}

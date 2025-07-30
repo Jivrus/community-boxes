@@ -1,0 +1,125 @@
+{
+   "__id":"todoist",
+   "name":"Todoist",
+   "description":"Todoist is a task management application that allows users to create, organize, and track their tasks and projects.",
+   "status":"alpha",
+   "type":"application",
+   "supports":[
+      "object"
+   ],
+   "logo":"",
+   "connectorType":"http",
+   "authType": [
+        "oauth2",
+        "key"
+      ],
+   "organization":"todoist",
+   "categories":[
+      "productivity"
+   ],
+   "config": {
+        "list": [
+          "baseURL",
+          "authType"
+        ],
+        "baseURL": {
+          "name": "Base URL",
+          "dataType": "string",
+          "required": true,
+          "icon": "http",
+          "defaultValue": "https://api.todoist.com/api/v1",
+          "writable": false
+        },
+        "authType": {
+          "name": "authType",
+          "dataType": "string",
+          "required": true,
+          "hidden": true,
+          "icon": "http"
+        },
+        "oauth2": {
+          "list": [
+            "accesstoken"
+          ],
+          "accesstoken": {
+            "name": "Access Token",
+            "dataType": "password",
+            "icon": "security",
+            "required": true
+          },
+          "options": {
+            "list": [
+              "headers"
+            ],
+            "headers": {
+              "Authorization": "Bearer ${accesstoken}",
+              "contentType": "application/json"
+            }
+          }
+        },
+        "key": {
+          "list": [
+            "apikey"
+          ],
+          "apikey": {
+            "name": " API Key",
+            "dataType": "password",
+            "icon": "security",
+            "required": true
+          },
+          "options": {
+            "list": [
+              "headers"
+            ],
+            "headers": {
+              "contentType": "application/json",
+              "Authorization":"Bearer ${key}"
+            }
+          }
+        }
+      },
+   "functions":{
+      "list":[
+         "getobjects",
+         "getattributes"
+      ],
+      "getobjects":{
+         "__id":"getobjects",
+         "name":"Get Objects",
+         "functionName":"objects",
+         "crudType":"R"
+      },
+      "getattributes":{
+         "__id":"getattributes",
+         "name":"Get Attributes",
+         "functionName":"attributes",
+         "crudType":"R",
+         "input":{
+            "list":[
+               "object"
+            ],
+            "object":{
+               "name":"object",
+               "dataType":"string",
+               "required":true
+            }
+         }
+      }
+   },
+   "objects":{
+      "list":[
+         "project",
+         "section",
+         "tasks",
+         "comment",
+         "label",
+         "collaborator"
+      ],
+      "project":"${include|project.json}",
+      "section":"${include|section.json}",
+      "tasks":"${include|tasks.json}",
+      "comment":"${include|comment.json}",
+      "label":"${include|label.json}",
+      "collaborator":"${include|collaborator.json}"
+   }
+}
