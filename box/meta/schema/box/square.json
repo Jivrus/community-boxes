@@ -1,0 +1,90 @@
+{
+  "__id": "square",
+  "name": "Square",
+  "description": "Square payment processing and business management platform.",
+  "status": "alpha",
+  "type": "application",
+  "supports": ["object", "functions"],
+  "logo": "https://cdn.cookielaw.org/logos/aa498dad-1691-4c3b-894a-906c990be323/eab8b6ff-57d6-438a-a7e5-c58dd370ce73/000d8b20-8c3d-4f4f-a0da-5b515f8f20d2/Square_combinationmark_black.png",
+  "connectorType": "http",
+  "organization": "square",
+  "categories": [
+    "ecommerce", 
+    "payments"
+  ],
+  "config": {
+    "list": [
+      "baseURL",
+      "authType"
+    ],
+    "baseURL": {
+      "name": "Base URL",
+      "dataType": "string",
+      "required": true,
+      "icon": "http",
+      "defaultValue": "https://connect.squareupsandbox.com/v2",
+      "writable": false
+    },
+    "authType": {
+      "name": "Authentication Type",
+      "dataType": "string",
+      "required": true,
+      "hidden": true,
+      "defaultValue": "oauth2"
+    },
+    "oauth2": {
+      "list": [
+        "accesstoken"
+      ],
+      "accesstoken": {
+        "name": "Access Token",
+        "dataType": "password",
+        "required": true,
+        "icon": "security"
+      },
+   
+      "options": {
+          "list": ["headers"],
+            "headers": {
+              "Authorization": "Bearer ${accesstoken}",
+              "Content-Type": "application/json"
+            }
+        
+       }
+               
+               
+      }
+  },
+  "functions": {
+    "list": [
+      "getobjects", 
+      "getattributes"
+    ],
+    "getobjects": {
+      "__id": "getobjects",
+      "name": "Get Objects",
+      "functionName": "objects",
+      "crudType": "R"
+    },
+    "getattributes": {
+      "__id": "getattributes",
+      "name": "Get Attributes",
+      "crudType": "R",
+      "functionName": "attributes",
+      "input": {
+        "list": [
+          "object"
+        ],
+        "object": {
+          "name": "object",
+          "dataType": "string",
+          "required": true
+        }
+      }
+    }
+  },
+  "objects": {
+    "list": ["customers"],
+    "customers": "${include|customers.json}"
+  }
+}

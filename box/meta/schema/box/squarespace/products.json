@@ -1,0 +1,117 @@
+{
+  "__id": "products",
+  "name": "Products",
+  "type": "object",
+  "description": "Represents a Squarespace product.",
+  "functions": "${include|products_functions.json}",
+  "attributes": {
+    "fields": {
+      "list": [
+        "id",
+        "name",
+        "description",
+        "price",
+        "storePageId",
+        "type",
+        "sku",
+        "currency",
+        "isVisible",
+        "stockQuantity"
+      ],
+      "id": {
+        "__id": "id",
+        "name": "Product ID",
+        "dataType": "string",
+        "required": true,
+        "writable": false,
+        "sortable": true,
+        "primary": true,
+        "filterable": true
+      },
+      "name": {
+        "__id": "name",
+        "name": "Product Name",
+        "dataType": "string",
+        "required": true,
+        "writable": true,
+        "sortable": true,
+        "filterable": true
+      },
+      "description": {
+        "__id": "description",
+        "name": "Product Description (HTML)",
+        "dataType": "string",
+        "required": false,
+        "writable": true,
+        "sortable": false,
+        "filterable": false
+      },
+      "price": {
+        "__id": "price",
+        "name": "Base Price",
+        "dataType": "number",
+        "required": true,
+        "writable": true,
+        "sortable": true,
+        "filterable": false
+      },
+      "currency": {
+        "__id": "currency",
+        "name": "Currency (e.g., USD)",
+        "dataType": "string",
+        "required": true,
+        "writable": true,
+        "sortable": false,
+        "filterable": false
+      },
+      "sku": {
+        "__id": "sku",
+        "name": "SKU",
+        "dataType": "string",
+        "required": true,
+        "writable": true,
+        "sortable": true,
+        "filterable": true
+      },
+      "storePageId": {
+        "__id": "storePageId",
+        "name": "Store Page ID",
+        "dataType": "string",
+        "required": true,
+        "writable": true,
+        "sortable": false,
+        "filterable": false
+      },
+      "type": {
+        "__id": "type",
+        "name": "Product Type",
+        "dataType": "string",
+        "required": true,
+        "writable": true,
+        "default": "PHYSICAL",
+        "sortable": false,
+        "filterable": false
+      },
+      "isVisible": {
+        "__id": "isVisible",
+        "name": "Visible on Storefront",
+        "dataType": "boolean",
+        "required": false,
+        "writable": true,
+        "default": true,
+        "sortable": false,
+        "filterable": false
+      },
+      "stockQuantity": {
+        "__id": "stockQuantity",
+        "name": "Stock Quantity",
+        "dataType": "number",
+        "required": false,
+        "writable": true,
+        "default": 0,
+        "sortable": false,
+        "filterable": false
+      }
+    }
+  }
+}

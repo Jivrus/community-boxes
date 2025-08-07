@@ -1,0 +1,133 @@
+{
+   "__id":"orders",
+   "name":"Orders",
+   "type":"object",
+   "description":"Represents a Squarespace order.",
+   "functions":"${include|orders_functions.json}",
+   "attributes":{
+      "fields":{
+         "list":[
+            "id",
+            "customerId",
+            "email",
+            "customerName",
+            "itemId",
+            "itemName",
+            "itemQuantity",
+            "itemPrice",
+            "totalPrice",
+            "orderDate",
+            "status"
+         ],
+         "id":{
+            "__id":"id",
+            "name":"Order ID",
+            "dataType":"string",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "primary":true,
+            "filterable":true
+         },
+         "customer":{
+            "__id":"customer",
+            "name":"Customer",
+            "dataType":"object",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+         },
+        "customerId":{
+            "__id":"customerId",
+            "name":"Customer ID",
+            "dataType":"string",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+        },
+        "email":{
+            "__id":"email",
+            "name":"Email",
+            "dataType":"string",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+        },
+        "customerName":{
+            "__id":"customerName",
+            "name":"Customer Name",
+            "dataType":"string",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+        },
+        "itemId":{
+            "__id":"itemId",
+            "name":"Item ID",
+            "dataType":"string",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+        },
+        "itemName":{
+            "__id":"itemName",
+            "name":"Item Name",
+            "dataType":"string",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+        },
+        "itemQuantity":{
+            "__id":"itemQuantity",
+            "name":"Item Quantity",
+            "dataType":"number",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+        },
+        "itemPrice":{
+           "__id":"itemPrice",
+           "name":"Item Price",
+           "dataType":"number",
+           "required":true,
+           "writable":false,
+           "sortable":true,
+           "filterable":true
+         },
+         "totalPrice":{
+            "__id":"totalPrice",
+            "name":"Total Price",
+            "dataType":"number",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+         },
+         "orderDate":{
+            "__id":"orderDate",
+            "name":"Order Date",
+            "dataType":"datetime",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+         },
+         "status":{
+            "__id":"status",
+            "name":"Status",
+            "dataType":"string",
+            "required":true,
+            "writable":false,
+            "sortable":true,
+            "filterable":true
+         }
+      }
+   }
+}
